@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+EVENT_HANDLER_H	event_handler.h	2;"	d
+EventHandler	event_handler.h	/^class EventHandler {$/;"	c
+EventType	initiation_dispatcher.h	/^enum EventType {$/;"	g
+GetHandle	logging_acceptor.h	/^  virtual Handle GetHandle(void) const {$/;"	f	class:LoggingAcceptor
+GetInstance	initiation_dispatcher.cc	/^InitiationDispatcher* InitiationDispatcher::GetInstance() {$/;"	f	class:InitiationDispatcher
+HandleEvents	initiation_dispatcher.cc	/^int InitiationDispatcher::HandleEvents(TimeValue* timeout) {$/;"	f	class:InitiationDispatcher
+INITIATION_DISPATCHER	initiation_dispatcher.h	3;"	d
+InitiationDispatcher	initiation_dispatcher.h	/^class InitiationDispatcher {$/;"	c
+LOGGING_ACCEPTOR_H	logging_acceptor.h	2;"	d
+LoggingAcceptor	logging_acceptor.c	/^LoggingAcceptor::LoggingAcceptor(const InetAddr& addr) : acceptor_(addr) {$/;"	f	class:LoggingAcceptor
+LoggingAcceptor	logging_acceptor.h	/^class LoggingAcceptor : public EventHandler {$/;"	c
+RegisterHandler	initiation_dispatcher.cc	/^int InitiationDispatcher::RegisterHandler(EventHandler* eh, EventType et) {$/;"	f	class:InitiationDispatcher
+RemoveHandler	initiation_dispatcher.cc	/^int InitiationDispatcher::RemoveHandler(EventHandler* eh, EventType et) {$/;"	f	class:InitiationDispatcher
+acceptor_	logging_acceptor.h	/^  SockAcceptor acceptor_;$/;"	m	class:LoggingAcceptor
+handler_table_	initiation_dispatcher.h	/^  std::map<EventHandler*, EventType> handler_table_;$/;"	m	class:InitiationDispatcher
+kAcceptEvent	initiation_dispatcher.h	/^  kAcceptEvent = 01,$/;"	e	enum:EventType
+kCloseEvent	initiation_dispatcher.h	/^  kCloseEvent = 040$/;"	e	enum:EventType
+kReadEvent	initiation_dispatcher.h	/^  kReadEvent = 02,$/;"	e	enum:EventType
+kSignalEvnet	initiation_dispatcher.h	/^  kSignalEvnet = 020,$/;"	e	enum:EventType
+kTimeoutEvent	initiation_dispatcher.h	/^  kTimeoutEvent = 010,$/;"	e	enum:EventType
+kWriteEvent	initiation_dispatcher.h	/^  kWriteEvent = 04,$/;"	e	enum:EventType

@@ -1,0 +1,390 @@
+cscope 15 $HOME/study/practice/Reactor -q 0000000041 0000002079
+	@event_handler.c
+
+1 
+	~"ev’t_hªdËr.h
+"
+
+	@event_handler.h
+
+1 #iâdeà
+EVENT_HANDLER_H
+
+
+2 
+	#EVENT_HANDLER_H
+
+
+	)
+
+4 şas 
+	cEv’tHªdËr
+ {
+
+5 
+	mpublic
+:
+
+8 
+vœtu®
+ 
+HªdËEv’t
+(
+Ev’tTy³
+ 
+‘
+) = 0;
+
+10 
+vœtu®
+ 
+HªdË
+ 
+	$G‘HªdË
+() const = 0;
+
+	@initiation_dispatcher.cc
+
+1 
+	~"š™ŸtiÚ_di¥©ch”.h
+"
+
+3 
+In™ŸtiÚDi¥©ch”
+* 
+	gIn™ŸtiÚDi¥©ch”
+::
+	$G‘In¡ªû
+() {
+
+5 
+	}
+}
+
+7 
+	gIn™ŸtiÚDi¥©ch”
+::
+	$Regi¡”HªdËr
+(
+Ev’tHªdËr
+* 
+eh
+, 
+Ev’tTy³
+ 
+‘
+) {
+
+8 
+hªdËr_bË_
+[
+eh
+] = 
+‘
+;
+
+10 
+	}
+}
+
+12 
+	gIn™ŸtiÚDi¥©ch”
+::
+	$RemoveHªdËr
+(
+Ev’tHªdËr
+* 
+eh
+, 
+Ev’tTy³
+ 
+‘
+) {
+
+13 
+num
+ = 
+hªdËr_bË_
+.
+	`”a£
+(
+eh
+);
+
+14  
+num
+ == 1;
+
+15 
+	}
+}
+
+17 
+	gIn™ŸtiÚDi¥©ch”
+::
+	$HªdËEv’ts
+(
+TimeV®ue
+* 
+timeout
+) {
+
+19 
+	}
+}
+
+	@initiation_dispatcher.h
+
+2 #iâdeà
+INITIATION_DISPATCHER
+
+
+3 
+	#INITIATION_DISPATCHER
+
+
+	)
+
+5 
+	~<m­
+>
+
+7 
+	eEv’tTy³
+ {
+
+8 
+	mkAcû±Ev’t
+ = 01,
+
+9 
+	mkR—dEv’t
+ = 02,
+
+10 
+	mkWr™eEv’t
+ = 04,
+
+11 
+	mkTimeoutEv’t
+ = 010,
+
+12 
+	mkSigÇlEvÃt
+ = 020,
+
+13 
+	mkClo£Ev’t
+ = 040
+
+16 
+şass
+ 
+	gTimeV®ue
+;
+
+17 
+şass
+ 
+	gEv’tHªdËr
+;
+
+21 şas 
+	cIn™ŸtiÚDi¥©ch”
+ {
+
+22 
+	mpublic
+:
+
+24 
+In™ŸtiÚDi¥©ch”
+* 
+G‘In¡ªû
+();
+
+26 
+Regi¡”HªdËr
+(
+Ev’tHªdËr
+* 
+eh
+, 
+Ev’tTy³
+ 
+‘
+);
+
+28 
+RemoveHªdËr
+(
+Ev’tHªdËr
+* 
+eh
+, 
+Ev’tTy³
+ 
+‘
+);
+
+30 
+HªdËEv’ts
+(
+TimeV®ue
+* 
+timeout
+ = 0);
+
+31 
+	m´iv©e
+:
+
+32 
+¡d
+::
+m­
+<
+Ev’tHªdËr
+*, 
+	mEv’tTy³
+> 
+	mhªdËr_bË_
+;
+
+35 
+In™ŸtiÚDi¥©ch”
+();
+
+36 
+In™ŸtiÚDi¥©ch”
+(const InitiationDispatcher&);
+
+37 
+	mIn™ŸtiÚDi¥©ch”
+& 
+	mİ”©Ü
+=(cÚ¡ 
+In™ŸtiÚDi¥©ch”
+&);
+
+	@logging_acceptor.c
+
+1 
+	~"loggšg_acû±Ü.h
+"
+
+2 
+	~"š™ŸtiÚ_di¥©ch”.h
+"
+
+4 
+	gLoggšgAcû±Ü
+::
+	$LoggšgAcû±Ü
+(cÚ¡ 
+IÃtAddr
+& 
+addr
+è: 
+	$acû±Ü_
+(
+addr
+) {
+
+5 
+In™ŸtiÚDi¥©ch”
+
+
+7 
+	}
+}
+
+	@logging_acceptor.h
+
+1 #iâdeà
+LOGGING_ACCEPTOR_H
+
+
+2 
+	#LOGGING_ACCEPTOR_H
+
+
+	)
+
+4 
+şass
+ 
+	gSockAcû±Ü
+;
+
+6 şas 
+	cLoggšgAcû±Ü
+ : 
+public
+ 
+Ev’tHªdËr
+ {
+
+7 
+public
+:
+
+8 
+LoggšgAcû±Ü
+(cÚ¡ 
+IÃtAddr
+& 
+addr
+);
+
+9 
+vœtu®
+ 
+HªdËEv’t
+(
+Ev’tTy³
+ 
+‘
+);
+
+10 
+vœtu®
+ 
+HªdË
+ 
+	$G‘HªdË
+() const {
+
+11  
+acû±Ü_
+.
+	`G‘HªdË
+();
+
+13 
+´iv©e
+:
+
+14 
+SockAcû±Ü
+ 
+acû±Ü_
+;
+
+16 
+	}
+};
+
+	@
+1
+.
+1
+/usr/include
+6
+119
+event_handler.c
+event_handler.h
+initiation_dispatcher.cc
+initiation_dispatcher.h
+logging_acceptor.c
+logging_acceptor.h
