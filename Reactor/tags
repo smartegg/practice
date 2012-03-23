@@ -4,24 +4,335 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-EVENT_HANDLER_H	event_handler.h	2;"	d
-EventHandler	event_handler.h	/^class EventHandler {$/;"	c
-EventType	initiation_dispatcher.h	/^enum EventType {$/;"	g
-GetHandle	logging_acceptor.h	/^  virtual Handle GetHandle(void) const {$/;"	f	class:LoggingAcceptor
-GetInstance	initiation_dispatcher.cc	/^InitiationDispatcher* InitiationDispatcher::GetInstance() {$/;"	f	class:InitiationDispatcher
-HandleEvents	initiation_dispatcher.cc	/^int InitiationDispatcher::HandleEvents(TimeValue* timeout) {$/;"	f	class:InitiationDispatcher
-INITIATION_DISPATCHER	initiation_dispatcher.h	3;"	d
-InitiationDispatcher	initiation_dispatcher.h	/^class InitiationDispatcher {$/;"	c
-LOGGING_ACCEPTOR_H	logging_acceptor.h	2;"	d
-LoggingAcceptor	logging_acceptor.c	/^LoggingAcceptor::LoggingAcceptor(const InetAddr& addr) : acceptor_(addr) {$/;"	f	class:LoggingAcceptor
-LoggingAcceptor	logging_acceptor.h	/^class LoggingAcceptor : public EventHandler {$/;"	c
-RegisterHandler	initiation_dispatcher.cc	/^int InitiationDispatcher::RegisterHandler(EventHandler* eh, EventType et) {$/;"	f	class:InitiationDispatcher
-RemoveHandler	initiation_dispatcher.cc	/^int InitiationDispatcher::RemoveHandler(EventHandler* eh, EventType et) {$/;"	f	class:InitiationDispatcher
-acceptor_	logging_acceptor.h	/^  SockAcceptor acceptor_;$/;"	m	class:LoggingAcceptor
-handler_table_	initiation_dispatcher.h	/^  std::map<EventHandler*, EventType> handler_table_;$/;"	m	class:InitiationDispatcher
-kAcceptEvent	initiation_dispatcher.h	/^  kAcceptEvent = 01,$/;"	e	enum:EventType
-kCloseEvent	initiation_dispatcher.h	/^  kCloseEvent = 040$/;"	e	enum:EventType
-kReadEvent	initiation_dispatcher.h	/^  kReadEvent = 02,$/;"	e	enum:EventType
-kSignalEvnet	initiation_dispatcher.h	/^  kSignalEvnet = 020,$/;"	e	enum:EventType
-kTimeoutEvent	initiation_dispatcher.h	/^  kTimeoutEvent = 010,$/;"	e	enum:EventType
-kWriteEvent	initiation_dispatcher.h	/^  kWriteEvent = 04,$/;"	e	enum:EventType
+Bind	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Bind(Handle handle, EventHandler* handler,$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle, EventHandler* handler, EventType et)
+Bind	select_reactor_impl.h	/^  int Bind(Handle handle, EventHandler* handler, EventType et);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle, EventHandler* handler, EventType et)
+BitOps	select_reactor_impl.cc	/^int SelectReactorImpl::BitOps(Handle handle, EventType mask, $/;"	f	language:C++	class:SelectReactorImpl	signature:(Handle handle, EventType mask, SelectReactorHandleSet& handle_set, int ops)
+BitOps	select_reactor_impl.h	/^  virtual int BitOps(Handle handle, EventType mask,$/;"	p	language:C++	class:SelectReactorImpl	access:protected	signature:(Handle handle, EventType mask, SelectReactorHandleSet& handle_set, int ops)
+Cancel	timer_queue.h	/^  virtual int Cancel(EventHandler* handler);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(EventHandler* handler)
+Cancel	timer_queue.h	/^  virtual int Cancel(int timer_id, const void** act = 0);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(int timer_id, const void** act = 0)
+ClearDispatch	select_reactor_impl.h	/^  virtual void ClearDispatch(Handle handle, EventType et);$/;"	p	language:C++	class:SelectReactorImpl	access:protected	signature:(Handle handle, EventType et)
+Close	reactor.h	/^  int Close();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+Close	reactor_impl.h	/^  virtual int Close() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+Close	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Close() {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:()
+Close	select_reactor_impl.h	/^  int Close();$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:()
+CloseSingleton	reactor.cc	/^void Reactor::CloseSingleton() {$/;"	f	language:C++	class:Reactor	signature:()
+CloseSingleton	reactor.h	/^  static void CloseSingleton();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+ClrBit	handle_set.h	/^  void ClrBit(Handle handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle)
+CountBits	handle_set.cc	/^int HandleSet::CountBits(long n) {$/;"	f	language:C++	class:HandleSet	signature:(long n)
+CountBits	handle_set.h	/^  static int CountBits(long n);$/;"	p	language:C++	class:HandleSet	access:private	signature:(long n)
+DEFAULT_SIZE	select_reactor_impl.h	/^    DEFAULT_SIZE = FD_SETSIZE$/;"	e	language:C++	enum:SelectReactorImpl::__anon4
+DIV_BY_WORDSIZE	handle_set.cc	6;"	d	language:C++	file:
+EVENT_HANDLER_H	event_handler.h	2;"	d	language:C++
+EarliestTime	timer_queue.h	/^  const TimeValue& EarliestTime()const;$/;"	p	language:C++	class:TimerQueue	access:public	signature:() const
+EventHandler	event_handler.h	/^class EventHandler {$/;"	c	language:C++
+EventHandler::HandleClose	event_handler.h	/^  virtual int HandleClose(Handle, EventType);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle, EventType)
+EventHandler::HandleExcept	event_handler.h	/^  virtual int HandleExcept(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+EventHandler::HandleInput	event_handler.h	/^  virtual int HandleInput(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+EventHandler::HandleOutput	event_handler.h	/^  virtual int HandleOutput(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+EventHandler::HandleSignal	event_handler.h	/^  virtual int HandleSignal(int signum);$/;"	p	language:C++	class:EventHandler	access:public	signature:(int signum)
+EventHandler::HandleTimeout	event_handler.h	/^  virtual int HandleTimeout(const TimeValue& current_time,$/;"	p	language:C++	class:EventHandler	access:public	signature:(const TimeValue& current_time, const void* act = 0)
+EventHandler::handle	event_handler.h	/^  virtual Handle  handle(void) const ;$/;"	p	language:C++	class:EventHandler	access:public	signature:(void) const
+EventHandler::reactor	event_handler.h	/^  virtual Reactor* reactor() const; $/;"	p	language:C++	class:EventHandler	access:public	signature:() const
+EventHandler::reactor_	event_handler.h	/^  Reactor* reactor_;$/;"	m	language:C++	class:EventHandler	access:private
+EventHandler::set_handle	event_handler.h	/^  virtual void set_handle(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+EventHandler::set_reactor	event_handler.h	/^  virtual void set_reactor(Reactor* reactor);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Reactor* reactor)
+EventHandler::~EventHandler	event_handler.h	/^  virtual ~EventHandler();$/;"	p	language:C++	class:EventHandler	access:public	signature:()
+EventType	event_handler.h	/^enum  EventType{$/;"	g	language:C++
+Fds_Ptmf	select_reactor_impl.h	/^typedef  void (HandleSet::*Fds_Ptmf)(Handle);$/;"	t	language:C++
+Find	select_reactor_impl.h	/^  EventHandler* Find(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+GetHandle	logging_acceptor.h	/^  virtual Handle GetHandle(void) const {$/;"	f	language:C++	class:LoggingAcceptor	access:public	signature:(void) const
+GetHandle	logging_handler.h	/^  virtual Handle GetHandle(void) const {$/;"	f	language:C++	class:LoggingHandler	access:public	signature:(void) const
+GetInstance	reactor.cc	/^Reactor* Reactor::GetInstance() {$/;"	f	language:C++	class:Reactor	signature:()
+GetInstance	reactor.h	/^  static Reactor* GetInstance();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+HANDLE_SET_H	handle_set.h	2;"	d	language:C++
+Handle	event_handler.h	/^typedef int Handle;$/;"	t	language:C++
+HandleClose	event_handler.h	/^  virtual int HandleClose(Handle, EventType);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle, EventType)
+HandleEvent	logging_acceptor.h	/^  virtual void HandleEvent(EventType et);$/;"	p	language:C++	class:LoggingAcceptor	access:public	signature:(EventType et)
+HandleEvent	logging_handler.cc	/^void LoggingHandler::HandleEvent(EvnetType et) {$/;"	f	language:C++	class:LoggingHandler	signature:(EvnetType et)
+HandleEvent	logging_handler.h	/^  virtual int HandleEvent(EventType et);$/;"	p	language:C++	class:LoggingHandler	access:public	signature:(EventType et)
+HandleEvents	reactor.h	/^  int HandleEvents(TimeValue* max_wait_time = 0);$/;"	p	language:C++	class:Reactor	access:public	signature:(TimeValue* max_wait_time = 0)
+HandleEvents	reactor_impl.h	/^  virtual int HandleEvents(TimeValue* max_wait_time = 0) = 0; $/;"	p	language:C++	class:ReactorImpl	access:public	signature:(TimeValue* max_wait_time = 0)
+HandleExcept	event_handler.h	/^  virtual int HandleExcept(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+HandleInRange	select_reactor_impl.cc	/^bool SelectReactorHandlerRepository::HandleInRange(Handle handle) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle)
+HandleInRange	select_reactor_impl.h	/^  bool HandleInRange(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+HandleInput	event_handler.h	/^  virtual int HandleInput(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+HandleOutput	event_handler.h	/^  virtual int HandleOutput(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+HandleSet	handle_set.cc	/^HandleSet::HandleSet() {$/;"	f	language:C++	class:HandleSet	signature:()
+HandleSet	handle_set.cc	/^HandleSet::HandleSet(const fd_set& fd_mask) {$/;"	f	language:C++	class:HandleSet	signature:(const fd_set& fd_mask)
+HandleSet	handle_set.h	/^  HandleSet();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+HandleSet	handle_set.h	/^  HandleSet(const fd_set& mask);$/;"	p	language:C++	class:HandleSet	access:public	signature:(const fd_set& mask)
+HandleSet	handle_set.h	/^class HandleSet {$/;"	c	language:C++
+HandleSet::ClrBit	handle_set.h	/^  void ClrBit(Handle handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle)
+HandleSet::CountBits	handle_set.cc	/^int HandleSet::CountBits(long n) {$/;"	f	language:C++	class:HandleSet	signature:(long n)
+HandleSet::CountBits	handle_set.h	/^  static int CountBits(long n);$/;"	p	language:C++	class:HandleSet	access:private	signature:(long n)
+HandleSet::HandleSet	handle_set.cc	/^HandleSet::HandleSet() {$/;"	f	language:C++	class:HandleSet	signature:()
+HandleSet::HandleSet	handle_set.cc	/^HandleSet::HandleSet(const fd_set& fd_mask) {$/;"	f	language:C++	class:HandleSet	signature:(const fd_set& fd_mask)
+HandleSet::HandleSet	handle_set.h	/^  HandleSet();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+HandleSet::HandleSet	handle_set.h	/^  HandleSet(const fd_set& mask);$/;"	p	language:C++	class:HandleSet	access:public	signature:(const fd_set& mask)
+HandleSet::IsSet	handle_set.h	/^  int IsSet(Handle handle)const;$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle) const
+HandleSet::MaxSet	handle_set.h	/^  Handle MaxSet()const;$/;"	p	language:C++	class:HandleSet	access:public	signature:() const
+HandleSet::NumSet	handle_set.h	/^  int NumSet()const;$/;"	p	language:C++	class:HandleSet	access:public	signature:() const
+HandleSet::Reset	handle_set.h	/^  void Reset();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+HandleSet::SetBit	handle_set.h	/^  void SetBit(Handle handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle)
+HandleSet::SetMax	handle_set.cc	/^void HandleSet::SetMax(Handle max_handle) {$/;"	f	language:C++	class:HandleSet	signature:(Handle max_handle)
+HandleSet::SetMax	handle_set.h	/^  void SetMax(Handle max);$/;"	p	language:C++	class:HandleSet	access:private	signature:(Handle max)
+HandleSet::Sync	handle_set.cc	/^void HandleSet::Sync(Handle max_handle) {$/;"	f	language:C++	class:HandleSet	signature:(Handle max_handle)
+HandleSet::Sync	handle_set.h	/^  void Sync(Handle max_handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle max_handle)
+HandleSet::fdset	handle_set.h	/^  fd_set* fdset();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+HandleSet::kMaxSize	handle_set.h	/^    kMaxSize = FD_SETSIZE$/;"	e	language:C++	enum:HandleSet::__anon1
+HandleSet::kNbits	handle_set.h	/^    kNbits = 256,$/;"	e	language:C++	enum:HandleSet::__anon2
+HandleSet::kNumWords	handle_set.h	/^    kNumWords = howmany(kMaxSize,NFDBITS)$/;"	e	language:C++	enum:HandleSet::__anon2
+HandleSet::kWordSize	handle_set.h	/^    kWordSize = NFDBITS,$/;"	e	language:C++	enum:HandleSet::__anon2
+HandleSet::mask_	handle_set.h	/^  fd_set mask_;$/;"	m	language:C++	class:HandleSet	access:private
+HandleSet::max_handle_	handle_set.h	/^  Handle max_handle_;$/;"	m	language:C++	class:HandleSet	access:private
+HandleSet::operator fd_set*	handle_set.h	/^  operator fd_set*();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+HandleSet::size_	handle_set.h	/^  int size_;$/;"	m	language:C++	class:HandleSet	access:private
+HandleSignal	event_handler.h	/^  virtual int HandleSignal(int signum);$/;"	p	language:C++	class:EventHandler	access:public	signature:(int signum)
+HandleTimeout	event_handler.h	/^  virtual int HandleTimeout(const TimeValue& current_time,$/;"	p	language:C++	class:EventHandler	access:public	signature:(const TimeValue& current_time, const void* act = 0)
+Initialized	reactor_impl.h	/^  virtual bool Initialized() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+InvalidHandle	select_reactor_impl.cc	/^bool SelectReactorHandlerRepository::InvalidHandle(Handle handle) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle)
+InvalidHandle	select_reactor_impl.h	/^  bool InvalidHandle(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+IsEmpty	timer_queue.h	/^  int IsEmpty(void) const ;$/;"	p	language:C++	class:TimerQueue	access:public	signature:(void) const
+IsSet	handle_set.h	/^  int IsSet(Handle handle)const;$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle) const
+LOGGING_ACCEPTOR_H	logging_acceptor.h	2;"	d	language:C++
+LOGGING_HANDLER_H	logging_handler.h	2;"	d	language:C++
+LoggingAcceptor	logging_acceptor.cc	/^LoggingAcceptor::LoggingAcceptor(const InetAddr& addr) : acceptor_(addr) {$/;"	f	language:C++	class:LoggingAcceptor	signature:(const InetAddr& addr)
+LoggingAcceptor	logging_acceptor.h	/^  LoggingAcceptor(const InetAddr& addr);$/;"	p	language:C++	class:LoggingAcceptor	access:public	signature:(const InetAddr& addr)
+LoggingAcceptor	logging_acceptor.h	/^class LoggingAcceptor : public EventHandler {$/;"	c	language:C++	inherits:EventHandler
+LoggingAcceptor::GetHandle	logging_acceptor.h	/^  virtual Handle GetHandle(void) const {$/;"	f	language:C++	class:LoggingAcceptor	access:public	signature:(void) const
+LoggingAcceptor::HandleEvent	logging_acceptor.h	/^  virtual void HandleEvent(EventType et);$/;"	p	language:C++	class:LoggingAcceptor	access:public	signature:(EventType et)
+LoggingAcceptor::LoggingAcceptor	logging_acceptor.cc	/^LoggingAcceptor::LoggingAcceptor(const InetAddr& addr) : acceptor_(addr) {$/;"	f	language:C++	class:LoggingAcceptor	signature:(const InetAddr& addr)
+LoggingAcceptor::LoggingAcceptor	logging_acceptor.h	/^  LoggingAcceptor(const InetAddr& addr);$/;"	p	language:C++	class:LoggingAcceptor	access:public	signature:(const InetAddr& addr)
+LoggingAcceptor::acceptor_	logging_acceptor.h	/^  SockAcceptor acceptor_;$/;"	m	language:C++	class:LoggingAcceptor	access:private
+LoggingAcceptor::handle_event	logging_acceptor.cc	/^void LoggingAcceptor::handle_event (EventType et) {$/;"	f	language:C++	class:LoggingAcceptor	signature:(EventType et)
+LoggingHandler	logging_handler.cc	/^LoggingHandler::LoggingHandler(SockStream& cs) : peer_stream_(cs){$/;"	f	language:C++	class:LoggingHandler	signature:(SockStream& cs)
+LoggingHandler	logging_handler.h	/^  LoggingHandler(SockStream& cs);$/;"	p	language:C++	class:LoggingHandler	access:public	signature:(SockStream& cs)
+LoggingHandler	logging_handler.h	/^class LoggingHandler : public EventHandler {$/;"	c	language:C++	inherits:EventHandler
+LoggingHandler::GetHandle	logging_handler.h	/^  virtual Handle GetHandle(void) const {$/;"	f	language:C++	class:LoggingHandler	access:public	signature:(void) const
+LoggingHandler::HandleEvent	logging_handler.cc	/^void LoggingHandler::HandleEvent(EvnetType et) {$/;"	f	language:C++	class:LoggingHandler	signature:(EvnetType et)
+LoggingHandler::HandleEvent	logging_handler.h	/^  virtual int HandleEvent(EventType et);$/;"	p	language:C++	class:LoggingHandler	access:public	signature:(EventType et)
+LoggingHandler::LoggingHandler	logging_handler.cc	/^LoggingHandler::LoggingHandler(SockStream& cs) : peer_stream_(cs){$/;"	f	language:C++	class:LoggingHandler	signature:(SockStream& cs)
+LoggingHandler::LoggingHandler	logging_handler.h	/^  LoggingHandler(SockStream& cs);$/;"	p	language:C++	class:LoggingHandler	access:public	signature:(SockStream& cs)
+LoggingHandler::peer_stream_	logging_handler.h	/^  SockStream peer_stream_;$/;"	m	language:C++	class:LoggingHandler	access:private
+MSB_MASK	handle_set.cc	5;"	d	language:C++	file:
+MULT_BY_WORDSIZE	handle_set.cc	7;"	d	language:C++	file:
+MaxHandleP1	select_reactor_impl.h	/^  size_t MaxHandleP1()const;$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:() const
+MaxSet	handle_set.h	/^  Handle MaxSet()const;$/;"	p	language:C++	class:HandleSet	access:public	signature:() const
+Name	reactor.cc	/^const char* Reactor::Name() {$/;"	f	language:C++	class:Reactor	signature:()
+Name	reactor.h	/^  static const char* Name();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+NumSet	handle_set.h	/^  int NumSet()const;$/;"	p	language:C++	class:HandleSet	access:public	signature:() const
+Open	reactor.h	/^  int Open(size_t max_number_of_handles);$/;"	p	language:C++	class:Reactor	access:public	signature:(size_t max_number_of_handles)
+Open	reactor_impl.h	/^  virtual int Open(size_t size) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(size_t size)
+Open	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Open(size_t size) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(size_t size)
+Open	select_reactor_impl.h	/^  int Open(size_t size); $/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(size_t size)
+REACTOR_H	reactor.h	3;"	d	language:C++
+REACTOR_IMPL_H	reactor_impl.h	2;"	d	language:C++
+Reactor	reactor.cc	/^Reactor::Reactor(ReactorImpl* impl, bool delete_implementation) $/;"	f	language:C++	class:Reactor	signature:(ReactorImpl* impl, bool delete_implementation)
+Reactor	reactor.h	/^  Reactor(ReactorImpl* impl = 0, bool delete_impl = false);$/;"	p	language:C++	class:Reactor	access:public	signature:(ReactorImpl* impl = 0, bool delete_impl = false)
+Reactor	reactor.h	/^  Reactor(const Reactor&);$/;"	p	language:C++	class:Reactor	access:protected	signature:(const Reactor&)
+Reactor	reactor.h	/^class Reactor {$/;"	c	language:C++
+Reactor::Close	reactor.h	/^  int Close();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+Reactor::CloseSingleton	reactor.cc	/^void Reactor::CloseSingleton() {$/;"	f	language:C++	class:Reactor	signature:()
+Reactor::CloseSingleton	reactor.h	/^  static void CloseSingleton();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+Reactor::GetInstance	reactor.cc	/^Reactor* Reactor::GetInstance() {$/;"	f	language:C++	class:Reactor	signature:()
+Reactor::GetInstance	reactor.h	/^  static Reactor* GetInstance();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+Reactor::HandleEvents	reactor.h	/^  int HandleEvents(TimeValue* max_wait_time = 0);$/;"	p	language:C++	class:Reactor	access:public	signature:(TimeValue* max_wait_time = 0)
+Reactor::Name	reactor.cc	/^const char* Reactor::Name() {$/;"	f	language:C++	class:Reactor	signature:()
+Reactor::Name	reactor.h	/^  static const char* Name();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+Reactor::Open	reactor.h	/^  int Open(size_t max_number_of_handles);$/;"	p	language:C++	class:Reactor	access:public	signature:(size_t max_number_of_handles)
+Reactor::Reactor	reactor.cc	/^Reactor::Reactor(ReactorImpl* impl, bool delete_implementation) $/;"	f	language:C++	class:Reactor	signature:(ReactorImpl* impl, bool delete_implementation)
+Reactor::Reactor	reactor.h	/^  Reactor(ReactorImpl* impl = 0, bool delete_impl = false);$/;"	p	language:C++	class:Reactor	access:public	signature:(ReactorImpl* impl = 0, bool delete_impl = false)
+Reactor::Reactor	reactor.h	/^  Reactor(const Reactor&);$/;"	p	language:C++	class:Reactor	access:protected	signature:(const Reactor&)
+Reactor::ReactorEventHook	reactor.h	/^  typedef int (*ReactorEventHook) (Reactor*);$/;"	t	language:C++	class:Reactor	access:public
+Reactor::RegisterHandler	reactor.cc	/^int Reactor::RegisterHandler(EventHandler* event_handler, EventType et) {$/;"	f	language:C++	class:Reactor	signature:(EventHandler* event_handler, EventType et)
+Reactor::RegisterHandler	reactor.h	/^  virtual int RegisterHandler(EventHandler* eh, EventType et);$/;"	p	language:C++	class:Reactor	access:public	signature:(EventHandler* eh, EventType et)
+Reactor::RemoveHandler	reactor.h	/^  virtual int RemoveHandler(EventHandler* eh, EventType et);$/;"	p	language:C++	class:Reactor	access:public	signature:(EventHandler* eh, EventType et)
+Reactor::RunReactorEventLoop	reactor.cc	/^int Reactor::RunReactorEventLoop(ReactorEventHook eh) {$/;"	f	language:C++	class:Reactor	signature:(ReactorEventHook eh)
+Reactor::RunReactorEventLoop	reactor.h	/^  int RunReactorEventLoop(ReactorEventHook hook= 0);$/;"	p	language:C++	class:Reactor	access:public	signature:(ReactorEventHook hook= 0)
+Reactor::WorkPending	reactor.h	/^  int WorkPending(const TimeValue& max_wait_time);$/;"	p	language:C++	class:Reactor	access:public	signature:(const TimeValue& max_wait_time)
+Reactor::delete_implementation_	reactor.h	/^  bool delete_implementation_;$/;"	m	language:C++	class:Reactor	access:protected
+Reactor::delete_reactor_	reactor.cc	/^bool Reactor::delete_reactor_ = false;$/;"	m	language:C++	class:Reactor	file:
+Reactor::delete_reactor_	reactor.h	/^  static bool delete_reactor_;$/;"	m	language:C++	class:Reactor	access:protected
+Reactor::implementation	reactor.h	/^  ReactorImpl* implementation()const;$/;"	p	language:C++	class:Reactor	access:public	signature:() const
+Reactor::implementation_	reactor.h	/^  ReactorImpl* implementation_;$/;"	m	language:C++	class:Reactor	access:protected
+Reactor::kAddMask	reactor.h	/^    kAddMask = 3, $/;"	e	language:C++	enum:Reactor::__anon3
+Reactor::kClrMask	reactor.h	/^    kClrMask = 4$/;"	e	language:C++	enum:Reactor::__anon3
+Reactor::kGetMask	reactor.h	/^    kGetMask = 1,$/;"	e	language:C++	enum:Reactor::__anon3
+Reactor::kSetMask	reactor.h	/^    kSetMask = 2,$/;"	e	language:C++	enum:Reactor::__anon3
+Reactor::operator =	reactor.h	/^  Reactor& operator=(const Reactor&);$/;"	p	language:C++	class:Reactor	access:protected	signature:(const Reactor&)
+Reactor::reactor_	reactor.cc	/^Reactor* Reactor::reactor_ = 0;$/;"	m	language:C++	class:Reactor	file:
+Reactor::reactor_	reactor.h	/^  static Reactor* reactor_;$/;"	m	language:C++	class:Reactor	access:protected
+Reactor::set_implementation	reactor.h	/^  void set_implementation(ReactorImpl* impl);$/;"	p	language:C++	class:Reactor	access:protected	signature:(ReactorImpl* impl)
+Reactor::~Reactor	reactor.cc	/^Reactor::~Reactor() {$/;"	f	language:C++	class:Reactor	signature:()
+Reactor::~Reactor	reactor.h	/^  virtual ~Reactor();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+ReactorEventHook	reactor.h	/^  typedef int (*ReactorEventHook) (Reactor*);$/;"	t	language:C++	class:Reactor	access:public
+ReactorImpl	reactor_impl.h	/^class ReactorImpl {$/;"	c	language:C++
+ReactorImpl::Close	reactor_impl.h	/^  virtual int Close() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+ReactorImpl::HandleEvents	reactor_impl.h	/^  virtual int HandleEvents(TimeValue* max_wait_time = 0) = 0; $/;"	p	language:C++	class:ReactorImpl	access:public	signature:(TimeValue* max_wait_time = 0)
+ReactorImpl::Initialized	reactor_impl.h	/^  virtual bool Initialized() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+ReactorImpl::Open	reactor_impl.h	/^  virtual int Open(size_t size) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(size_t size)
+ReactorImpl::RegisterHandler	reactor_impl.h	/^  virtual int RegisterHandler(EventHandler* event_handler,$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(EventHandler* event_handler, EventType et)
+ReactorImpl::RemoveHandler	reactor_impl.h	/^  virtual int RemoveHandler(EventHandler* event_handler,$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(EventHandler* event_handler, EventType et)
+ReactorImpl::Size	reactor_impl.h	/^  virtual size_t Size() const;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:() const
+ReactorImpl::WorkPending	reactor_impl.h	/^  virtual int WorkPending(const TimeValue& max_wait_time) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(const TimeValue& max_wait_time)
+ReactorImpl::deactivate	reactor_impl.h	/^  virtual int deactivate(int do_stop) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(int do_stop)
+ReactorImpl::deactivated	reactor_impl.h	/^  virtual int deactivated() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+ReactorImpl::~ReactorImpl	reactor_impl.cc	/^ReactorImpl::~ReactorImpl() {$/;"	f	language:C++	class:ReactorImpl	signature:()
+ReactorImpl::~ReactorImpl	reactor_impl.h	/^  virtual ~ReactorImpl();$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+RegisterHandler	reactor.cc	/^int Reactor::RegisterHandler(EventHandler* event_handler, EventType et) {$/;"	f	language:C++	class:Reactor	signature:(EventHandler* event_handler, EventType et)
+RegisterHandler	reactor.h	/^  virtual int RegisterHandler(EventHandler* eh, EventType et);$/;"	p	language:C++	class:Reactor	access:public	signature:(EventHandler* eh, EventType et)
+RegisterHandler	reactor_impl.h	/^  virtual int RegisterHandler(EventHandler* event_handler,$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(EventHandler* event_handler, EventType et)
+RemoveHandler	reactor.h	/^  virtual int RemoveHandler(EventHandler* eh, EventType et);$/;"	p	language:C++	class:Reactor	access:public	signature:(EventHandler* eh, EventType et)
+RemoveHandler	reactor_impl.h	/^  virtual int RemoveHandler(EventHandler* event_handler,$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(EventHandler* event_handler, EventType et)
+Reset	handle_set.h	/^  void Reset();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+RunReactorEventLoop	reactor.cc	/^int Reactor::RunReactorEventLoop(ReactorEventHook eh) {$/;"	f	language:C++	class:Reactor	signature:(ReactorEventHook eh)
+RunReactorEventLoop	reactor.h	/^  int RunReactorEventLoop(ReactorEventHook hook= 0);$/;"	p	language:C++	class:Reactor	access:public	signature:(ReactorEventHook hook= 0)
+SELECT_REACTOR_IMPL_H	select_reactor_impl.h	2;"	d	language:C++
+Schedule	timer_queue.h	/^  virtual int Schedule(EventHandler* handler,$/;"	p	language:C++	class:TimerQueue	access:public	signature:(EventHandler* handler, const void* act, const TimeValue& future_time, const TimeValue& interval)
+SelectReactorHandleSet	select_reactor_impl.h	/^class SelectReactorHandleSet {$/;"	c	language:C++
+SelectReactorHandleSet::ex_mask_	select_reactor_impl.h	/^  HandleSet ex_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+SelectReactorHandleSet::rd_mask_	select_reactor_impl.h	/^  HandleSet rd_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+SelectReactorHandleSet::wr_mask_	select_reactor_impl.h	/^  HandleSet wr_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+SelectReactorHandlerRepository	select_reactor_impl.cc	/^SelectReactorHandlerRepository::SelectReactorHandlerRepository($/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:( SelectReactorImpl& impl)
+SelectReactorHandlerRepository	select_reactor_impl.h	/^  SelectReactorHandlerRepository(SelectReactorImpl&); $/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(SelectReactorImpl&)
+SelectReactorHandlerRepository	select_reactor_impl.h	/^class SelectReactorHandlerRepository {$/;"	c	language:C++
+SelectReactorHandlerRepository::Bind	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Bind(Handle handle, EventHandler* handler,$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle, EventHandler* handler, EventType et)
+SelectReactorHandlerRepository::Bind	select_reactor_impl.h	/^  int Bind(Handle handle, EventHandler* handler, EventType et);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle, EventHandler* handler, EventType et)
+SelectReactorHandlerRepository::Close	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Close() {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:()
+SelectReactorHandlerRepository::Close	select_reactor_impl.h	/^  int Close();$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:()
+SelectReactorHandlerRepository::Find	select_reactor_impl.h	/^  EventHandler* Find(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+SelectReactorHandlerRepository::HandleInRange	select_reactor_impl.cc	/^bool SelectReactorHandlerRepository::HandleInRange(Handle handle) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle)
+SelectReactorHandlerRepository::HandleInRange	select_reactor_impl.h	/^  bool HandleInRange(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+SelectReactorHandlerRepository::InvalidHandle	select_reactor_impl.cc	/^bool SelectReactorHandlerRepository::InvalidHandle(Handle handle) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle)
+SelectReactorHandlerRepository::InvalidHandle	select_reactor_impl.h	/^  bool InvalidHandle(Handle handle);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle)
+SelectReactorHandlerRepository::MaxHandleP1	select_reactor_impl.h	/^  size_t MaxHandleP1()const;$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:() const
+SelectReactorHandlerRepository::Open	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::Open(size_t size) {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(size_t size)
+SelectReactorHandlerRepository::Open	select_reactor_impl.h	/^  int Open(size_t size); $/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(size_t size)
+SelectReactorHandlerRepository::SelectReactorHandlerRepository	select_reactor_impl.cc	/^SelectReactorHandlerRepository::SelectReactorHandlerRepository($/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:( SelectReactorImpl& impl)
+SelectReactorHandlerRepository::SelectReactorHandlerRepository	select_reactor_impl.h	/^  SelectReactorHandlerRepository(SelectReactorImpl&); $/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(SelectReactorImpl&)
+SelectReactorHandlerRepository::Size	select_reactor_impl.h	/^  size_t Size() const;$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:() const
+SelectReactorHandlerRepository::UnBind	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::UnBind(Handle handle,$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle, map_type::iterator pos, EventType et)
+SelectReactorHandlerRepository::UnBind	select_reactor_impl.h	/^  int UnBind(Handle handle, EventType mask);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle, EventType mask)
+SelectReactorHandlerRepository::UnBind	select_reactor_impl.h	/^  int UnBind(Handle handle, map_type::iterator pos, EventType et);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:private	signature:(Handle handle, map_type::iterator pos, EventType et)
+SelectReactorHandlerRepository::UnBindAll	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::UnBindAll() {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:()
+SelectReactorHandlerRepository::UnBindAll	select_reactor_impl.h	/^  int UnBindAll();$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:()
+SelectReactorHandlerRepository::map_type	select_reactor_impl.h	/^  typedef std::map<Handle, EventHandler*> map_type;$/;"	t	language:C++	class:SelectReactorHandlerRepository	access:public
+SelectReactorHandlerRepository::maxhandlep1_	select_reactor_impl.h	/^  Handle maxhandlep1_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+SelectReactorHandlerRepository::select_reactor_	select_reactor_impl.h	/^  SelectReactorImpl& select_reactor_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+SelectReactorHandlerRepository::table_	select_reactor_impl.h	/^  std::map<Handle, EventHandler*> table_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+SelectReactorImpl	select_reactor_impl.h	/^  SelectReactorImpl();$/;"	p	language:C++	class:SelectReactorImpl	access:public	signature:()
+SelectReactorImpl	select_reactor_impl.h	/^  SelectReactorImpl(const SelectReactorImpl&);$/;"	p	language:C++	class:SelectReactorImpl	access:private	signature:(const SelectReactorImpl&)
+SelectReactorImpl	select_reactor_impl.h	/^class SelectReactorImpl : public ReactorImpl {$/;"	c	language:C++	inherits:ReactorImpl
+SelectReactorImpl::BitOps	select_reactor_impl.cc	/^int SelectReactorImpl::BitOps(Handle handle, EventType mask, $/;"	f	language:C++	class:SelectReactorImpl	signature:(Handle handle, EventType mask, SelectReactorHandleSet& handle_set, int ops)
+SelectReactorImpl::BitOps	select_reactor_impl.h	/^  virtual int BitOps(Handle handle, EventType mask,$/;"	p	language:C++	class:SelectReactorImpl	access:protected	signature:(Handle handle, EventType mask, SelectReactorHandleSet& handle_set, int ops)
+SelectReactorImpl::ClearDispatch	select_reactor_impl.h	/^  virtual void ClearDispatch(Handle handle, EventType et);$/;"	p	language:C++	class:SelectReactorImpl	access:protected	signature:(Handle handle, EventType et)
+SelectReactorImpl::DEFAULT_SIZE	select_reactor_impl.h	/^    DEFAULT_SIZE = FD_SETSIZE$/;"	e	language:C++	enum:SelectReactorImpl::__anon4
+SelectReactorImpl::SelectReactorImpl	select_reactor_impl.h	/^  SelectReactorImpl();$/;"	p	language:C++	class:SelectReactorImpl	access:public	signature:()
+SelectReactorImpl::SelectReactorImpl	select_reactor_impl.h	/^  SelectReactorImpl(const SelectReactorImpl&);$/;"	p	language:C++	class:SelectReactorImpl	access:private	signature:(const SelectReactorImpl&)
+SelectReactorImpl::dispatche_set_	select_reactor_impl.h	/^  SelectReactorHandleSet dispatche_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SelectReactorImpl::handler_repo_	select_reactor_impl.h	/^  SelectReactorHandlerRepository handler_repo_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SelectReactorImpl::initialized_	select_reactor_impl.h	/^  bool initialized_; $/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SelectReactorImpl::operator =	select_reactor_impl.h	/^  SelectReactorImpl& operator=(const SelectReactorImpl&);$/;"	p	language:C++	class:SelectReactorImpl	access:private	signature:(const SelectReactorImpl&)
+SelectReactorImpl::ready_set_	select_reactor_impl.h	/^  SelectReactorHandleSet ready_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SelectReactorImpl::state_changed_	select_reactor_impl.h	/^  bool state_changed_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SelectReactorImpl::wait_set_	select_reactor_impl.h	/^  SelectReactorHandleSet wait_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+SetBit	handle_set.h	/^  void SetBit(Handle handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle handle)
+SetMax	handle_set.cc	/^void HandleSet::SetMax(Handle max_handle) {$/;"	f	language:C++	class:HandleSet	signature:(Handle max_handle)
+SetMax	handle_set.h	/^  void SetMax(Handle max);$/;"	p	language:C++	class:HandleSet	access:private	signature:(Handle max)
+Size	reactor_impl.h	/^  virtual size_t Size() const;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:() const
+Size	select_reactor_impl.h	/^  size_t Size() const;$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:() const
+Sync	handle_set.cc	/^void HandleSet::Sync(Handle max_handle) {$/;"	f	language:C++	class:HandleSet	signature:(Handle max_handle)
+Sync	handle_set.h	/^  void Sync(Handle max_handle);$/;"	p	language:C++	class:HandleSet	access:public	signature:(Handle max_handle)
+TIMER_QUEUE_h	timer_queue.h	2;"	d	language:C++
+TIME_VALUE_H	time_value.h	2;"	d	language:C++
+TimeValue	time_value.h	/^  TimeValue(const timeval& t);$/;"	p	language:C++	class:TimeValue	access:public	signature:(const timeval& t)
+TimeValue	time_value.h	/^class TimeValue {$/;"	c	language:C++
+TimeValue::TimeValue	time_value.h	/^  TimeValue(const timeval& t);$/;"	p	language:C++	class:TimeValue	access:public	signature:(const timeval& t)
+TimeValue::Timevalue	time_value.h	/^  Timevalue(long sec = 0, long usec = 0);$/;"	p	language:C++	class:TimeValue	access:public	signature:(long sec = 0, long usec = 0)
+TimeValue::operator +	time_value.h	/^  friend TimeValue operator+ (const TimeValue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const TimeValue& lhs, const TimeValue& rhs)
+TimeValue::operator -	time_value.h	/^  friend TimeValue operator- (const TimeValue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const TimeValue& lhs, const TimeValue& rhs)
+TimeValue::operator <	time_value.h	/^  friend int operator< (const Timevalue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const Timevalue& lhs, const Timevalue& rhs)
+TimerQueue	timer_queue.h	/^class TimerQueue {$/;"	c	language:C++
+TimerQueue::Cancel	timer_queue.h	/^  virtual int Cancel(EventHandler* handler);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(EventHandler* handler)
+TimerQueue::Cancel	timer_queue.h	/^  virtual int Cancel(int timer_id, const void** act = 0);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(int timer_id, const void** act = 0)
+TimerQueue::EarliestTime	timer_queue.h	/^  const TimeValue& EarliestTime()const;$/;"	p	language:C++	class:TimerQueue	access:public	signature:() const
+TimerQueue::IsEmpty	timer_queue.h	/^  int IsEmpty(void) const ;$/;"	p	language:C++	class:TimerQueue	access:public	signature:(void) const
+TimerQueue::Schedule	timer_queue.h	/^  virtual int Schedule(EventHandler* handler,$/;"	p	language:C++	class:TimerQueue	access:public	signature:(EventHandler* handler, const void* act, const TimeValue& future_time, const TimeValue& interval)
+TimerQueue::expire	timer_queue.h	/^  virtual void expire(const TimeValue& expire_time);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(const TimeValue& expire_time)
+Timevalue	time_value.h	/^  Timevalue(long sec = 0, long usec = 0);$/;"	p	language:C++	class:TimeValue	access:public	signature:(long sec = 0, long usec = 0)
+UnBind	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::UnBind(Handle handle,$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:(Handle handle, map_type::iterator pos, EventType et)
+UnBind	select_reactor_impl.h	/^  int UnBind(Handle handle, EventType mask);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:(Handle handle, EventType mask)
+UnBind	select_reactor_impl.h	/^  int UnBind(Handle handle, map_type::iterator pos, EventType et);$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:private	signature:(Handle handle, map_type::iterator pos, EventType et)
+UnBindAll	select_reactor_impl.cc	/^int SelectReactorHandlerRepository::UnBindAll() {$/;"	f	language:C++	class:SelectReactorHandlerRepository	signature:()
+UnBindAll	select_reactor_impl.h	/^  int UnBindAll();$/;"	p	language:C++	class:SelectReactorHandlerRepository	access:public	signature:()
+WorkPending	reactor.h	/^  int WorkPending(const TimeValue& max_wait_time);$/;"	p	language:C++	class:Reactor	access:public	signature:(const TimeValue& max_wait_time)
+WorkPending	reactor_impl.h	/^  virtual int WorkPending(const TimeValue& max_wait_time) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(const TimeValue& max_wait_time)
+acceptor_	logging_acceptor.h	/^  SockAcceptor acceptor_;$/;"	m	language:C++	class:LoggingAcceptor	access:private
+deactivate	reactor_impl.h	/^  virtual int deactivate(int do_stop) = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:(int do_stop)
+deactivated	reactor_impl.h	/^  virtual int deactivated() = 0;$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
+delete_implementation_	reactor.h	/^  bool delete_implementation_;$/;"	m	language:C++	class:Reactor	access:protected
+delete_reactor_	reactor.cc	/^bool Reactor::delete_reactor_ = false;$/;"	m	language:C++	class:Reactor	file:
+delete_reactor_	reactor.h	/^  static bool delete_reactor_;$/;"	m	language:C++	class:Reactor	access:protected
+dispatche_set_	select_reactor_impl.h	/^  SelectReactorHandleSet dispatche_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+ex_mask_	select_reactor_impl.h	/^  HandleSet ex_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+expire	timer_queue.h	/^  virtual void expire(const TimeValue& expire_time);$/;"	p	language:C++	class:TimerQueue	access:public	signature:(const TimeValue& expire_time)
+fdset	handle_set.h	/^  fd_set* fdset();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+handle	event_handler.h	/^  virtual Handle  handle(void) const ;$/;"	p	language:C++	class:EventHandler	access:public	signature:(void) const
+handle_event	logging_acceptor.cc	/^void LoggingAcceptor::handle_event (EventType et) {$/;"	f	language:C++	class:LoggingAcceptor	signature:(EventType et)
+handler_repo_	select_reactor_impl.h	/^  SelectReactorHandlerRepository handler_repo_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+howmany	handle_set.h	6;"	d	language:C++
+implementation	reactor.h	/^  ReactorImpl* implementation()const;$/;"	p	language:C++	class:Reactor	access:public	signature:() const
+implementation_	reactor.h	/^  ReactorImpl* implementation_;$/;"	m	language:C++	class:Reactor	access:protected
+initialized_	select_reactor_impl.h	/^  bool initialized_; $/;"	m	language:C++	class:SelectReactorImpl	access:protected
+kAcceptMask	event_handler.h	/^    kAcceptMask = (1 << 3),$/;"	e	language:C++	enum:EventType
+kAddMask	reactor.h	/^    kAddMask = 3, $/;"	e	language:C++	enum:Reactor::__anon3
+kAllEventsMask	event_handler.h	/^    kAllEventsMask = kReadMask | kWriteMask | kExceptMask | kAcceptMask |$/;"	e	language:C++	enum:EventType
+kClrMask	reactor.h	/^    kClrMask = 4$/;"	e	language:C++	enum:Reactor::__anon3
+kConnectMask	event_handler.h	/^    kConnectMask = (1<< 4),$/;"	e	language:C++	enum:EventType
+kDontCall	event_handler.h	/^    kDontCall = (1 << 7)$/;"	e	language:C++	enum:EventType
+kExceptMask	event_handler.h	/^    kExceptMask = (1<<2),$/;"	e	language:C++	enum:EventType
+kGetMask	reactor.h	/^    kGetMask = 1,$/;"	e	language:C++	enum:Reactor::__anon3
+kMaxSize	handle_set.h	/^    kMaxSize = FD_SETSIZE$/;"	e	language:C++	enum:HandleSet::__anon1
+kNbits	handle_set.h	/^    kNbits = 256,$/;"	e	language:C++	enum:HandleSet::__anon2
+kNullMask	event_handler.h	/^    kNullMask = 0,$/;"	e	language:C++	enum:EventType
+kNumWords	handle_set.h	/^    kNumWords = howmany(kMaxSize,NFDBITS)$/;"	e	language:C++	enum:HandleSet::__anon2
+kPort	server.cc	/^const uint16_t kPort = 10000;$/;"	v	language:C++
+kRWEMask	event_handler.h	/^    kRWEMask = kReadMask | kWriteMask | kExceptMask ,$/;"	e	language:C++	enum:EventType
+kReadMask	event_handler.h	/^    kReadMask = (1<<0),$/;"	e	language:C++	enum:EventType
+kSetMask	reactor.h	/^    kSetMask = 2,$/;"	e	language:C++	enum:Reactor::__anon3
+kSignalMask	event_handler.h	/^    kSignalMask = (1 << 6),$/;"	e	language:C++	enum:EventType
+kTimerMask	event_handler.h	/^    kTimerMask = ( 1<< 5),$/;"	e	language:C++	enum:EventType
+kWordSize	handle_set.h	/^    kWordSize = NFDBITS,$/;"	e	language:C++	enum:HandleSet::__anon2
+kWriteMask	event_handler.h	/^    kWriteMask = (1<<1),$/;"	e	language:C++	enum:EventType
+main	server.cc	/^int main(void) {$/;"	f	language:C++	signature:(void)
+map_type	select_reactor_impl.h	/^  typedef std::map<Handle, EventHandler*> map_type;$/;"	t	language:C++	class:SelectReactorHandlerRepository	access:public
+mask_	handle_set.h	/^  fd_set mask_;$/;"	m	language:C++	class:HandleSet	access:private
+max_handle_	handle_set.h	/^  Handle max_handle_;$/;"	m	language:C++	class:HandleSet	access:private
+maxhandlep1_	select_reactor_impl.h	/^  Handle maxhandlep1_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+operator +	time_value.h	/^  friend TimeValue operator+ (const TimeValue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const TimeValue& lhs, const TimeValue& rhs)
+operator -	time_value.h	/^  friend TimeValue operator- (const TimeValue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const TimeValue& lhs, const TimeValue& rhs)
+operator <	time_value.h	/^  friend int operator< (const Timevalue& lhs,$/;"	p	language:C++	class:TimeValue	access:friend	signature:(const Timevalue& lhs, const Timevalue& rhs)
+operator =	reactor.h	/^  Reactor& operator=(const Reactor&);$/;"	p	language:C++	class:Reactor	access:protected	signature:(const Reactor&)
+operator =	select_reactor_impl.h	/^  SelectReactorImpl& operator=(const SelectReactorImpl&);$/;"	p	language:C++	class:SelectReactorImpl	access:private	signature:(const SelectReactorImpl&)
+operator fd_set*	handle_set.h	/^  operator fd_set*();$/;"	p	language:C++	class:HandleSet	access:public	signature:()
+peer_stream_	logging_handler.h	/^  SockStream peer_stream_;$/;"	m	language:C++	class:LoggingHandler	access:private
+rd_mask_	select_reactor_impl.h	/^  HandleSet rd_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+reactor	event_handler.h	/^  virtual Reactor* reactor() const; $/;"	p	language:C++	class:EventHandler	access:public	signature:() const
+reactor_	event_handler.h	/^  Reactor* reactor_;$/;"	m	language:C++	class:EventHandler	access:private
+reactor_	reactor.cc	/^Reactor* Reactor::reactor_ = 0;$/;"	m	language:C++	class:Reactor	file:
+reactor_	reactor.h	/^  static Reactor* reactor_;$/;"	m	language:C++	class:Reactor	access:protected
+ready_set_	select_reactor_impl.h	/^  SelectReactorHandleSet ready_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+select_reactor_	select_reactor_impl.h	/^  SelectReactorImpl& select_reactor_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+set_handle	event_handler.h	/^  virtual void set_handle(Handle);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Handle)
+set_implementation	reactor.h	/^  void set_implementation(ReactorImpl* impl);$/;"	p	language:C++	class:Reactor	access:protected	signature:(ReactorImpl* impl)
+set_reactor	event_handler.h	/^  virtual void set_reactor(Reactor* reactor);$/;"	p	language:C++	class:EventHandler	access:public	signature:(Reactor* reactor)
+size_	handle_set.h	/^  int size_;$/;"	m	language:C++	class:HandleSet	access:private
+state_changed_	select_reactor_impl.h	/^  bool state_changed_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+table_	select_reactor_impl.h	/^  std::map<Handle, EventHandler*> table_;$/;"	m	language:C++	class:SelectReactorHandlerRepository	access:private
+wait_set_	select_reactor_impl.h	/^  SelectReactorHandleSet wait_set_;$/;"	m	language:C++	class:SelectReactorImpl	access:protected
+wr_mask_	select_reactor_impl.h	/^  HandleSet wr_mask_;$/;"	m	language:C++	class:SelectReactorHandleSet	access:public
+~EventHandler	event_handler.h	/^  virtual ~EventHandler();$/;"	p	language:C++	class:EventHandler	access:public	signature:()
+~Reactor	reactor.cc	/^Reactor::~Reactor() {$/;"	f	language:C++	class:Reactor	signature:()
+~Reactor	reactor.h	/^  virtual ~Reactor();$/;"	p	language:C++	class:Reactor	access:public	signature:()
+~ReactorImpl	reactor_impl.cc	/^ReactorImpl::~ReactorImpl() {$/;"	f	language:C++	class:ReactorImpl	signature:()
+~ReactorImpl	reactor_impl.h	/^  virtual ~ReactorImpl();$/;"	p	language:C++	class:ReactorImpl	access:public	signature:()
