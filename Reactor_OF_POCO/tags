@@ -1,0 +1,336 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AUTOPTR_H	AutoPtr.h	2;"	d
+AutoPtr	AutoPtr.h	/^  AutoPtr() : ptr_(0) {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr	AutoPtr.h	/^  AutoPtr(C* ptr) : ptr_(ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+AutoPtr	AutoPtr.h	/^  AutoPtr(C* ptr, bool shared) : ptr_(ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr, bool shared)
+AutoPtr	AutoPtr.h	/^  AutoPtr(const AutoPtr& ptr) : ptr_(ptr.ptr_) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+AutoPtr	AutoPtr.h	/^  AutoPtr(const AutoPtr<Other>& ptr) : ptr_(const_cast<Other*>((ptr.get()))) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+AutoPtr	AutoPtr.h	/^class AutoPtr {$/;"	c
+AutoPtr::AutoPtr	AutoPtr.h	/^  AutoPtr() : ptr_(0) {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::AutoPtr	AutoPtr.h	/^  AutoPtr(C* ptr) : ptr_(ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+AutoPtr::AutoPtr	AutoPtr.h	/^  AutoPtr(C* ptr, bool shared) : ptr_(ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr, bool shared)
+AutoPtr::AutoPtr	AutoPtr.h	/^  AutoPtr(const AutoPtr& ptr) : ptr_(ptr.ptr_) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+AutoPtr::AutoPtr	AutoPtr.h	/^  AutoPtr(const AutoPtr<Other>& ptr) : ptr_(const_cast<Other*>((ptr.get()))) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+AutoPtr::assign	AutoPtr.h	/^  AutoPtr& assign(C* ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+AutoPtr::assign	AutoPtr.h	/^  AutoPtr& assign(C* ptr, bool shared) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr, bool shared)
+AutoPtr::assign	AutoPtr.h	/^  AutoPtr& assign(const AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+AutoPtr::assign	AutoPtr.h	/^  AutoPtr& assign(const AutoPtr<Other>& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+AutoPtr::cast	AutoPtr.h	/^  AutoPtr<Other> cast()const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::duplicate	AutoPtr.h	/^  C* duplicate() {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::get	AutoPtr.h	/^  C* get() {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::get	AutoPtr.h	/^  const C* get() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::isNull	AutoPtr.h	/^  bool isNull() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::operator !	AutoPtr.h	/^  bool operator! () const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::operator !=	AutoPtr.h	/^  bool operator != (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator !=	AutoPtr.h	/^  bool operator != (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator !=	AutoPtr.h	/^  bool operator != (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator *	AutoPtr.h	/^  C& operator* () {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::operator *	AutoPtr.h	/^  const C& operator*() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::operator ->	AutoPtr.h	/^  C* operator-> () {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::operator ->	AutoPtr.h	/^  const C* operator->() const{$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::operator <	AutoPtr.h	/^  bool operator < (C* ptr)const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator <	AutoPtr.h	/^  bool operator< (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator <	AutoPtr.h	/^  bool operator< (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator <=	AutoPtr.h	/^  bool operator <= (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator <=	AutoPtr.h	/^  bool operator <= (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator <=	AutoPtr.h	/^  bool operator <= (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator =	AutoPtr.h	/^  AutoPtr& operator= (C* ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+AutoPtr::operator =	AutoPtr.h	/^  AutoPtr& operator= (const AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+AutoPtr::operator =	AutoPtr.h	/^  AutoPtr& operator= (const AutoPtr<Other>& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+AutoPtr::operator ==	AutoPtr.h	/^  bool operator == (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator ==	AutoPtr.h	/^  bool operator == (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator ==	AutoPtr.h	/^  bool operator== (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator >	AutoPtr.h	/^  bool operator > (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator >	AutoPtr.h	/^  bool operator > (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator >	AutoPtr.h	/^  bool operator > (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator >=	AutoPtr.h	/^  bool operator >= (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+AutoPtr::operator >=	AutoPtr.h	/^  bool operator >= (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+AutoPtr::operator >=	AutoPtr.h	/^  bool operator >= (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+AutoPtr::operator C*	AutoPtr.h	/^  operator C*() {$/;"	f	class:AutoPtr	access:public	signature:()
+AutoPtr::operator const C*	AutoPtr.h	/^  operator const C*() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::ptr_	AutoPtr.h	/^  C* ptr_;$/;"	m	class:AutoPtr	access:private
+AutoPtr::swap	AutoPtr.h	/^  void swap(AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(AutoPtr& ptr)
+AutoPtr::unsafeCase	AutoPtr.h	/^  AutoPtr<Other> unsafeCase() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+AutoPtr::~AutoPtr	AutoPtr.h	/^  ~AutoPtr() {$/;"	f	class:AutoPtr	access:public	signature:()
+DECLARE_EXCEPTION	Exception.h	73;"	d
+DECLARE_EXCEPTION_CODE	Exception.h	57;"	d
+EXCEPTION_H	Exception.h	2;"	d
+Exception	Exception.cc	/^Exception::Exception(const Exception& exc) : std::exception(exc),$/;"	f	class:Exception	signature:(const Exception& exc)
+Exception	Exception.cc	/^Exception::Exception(const std::string& msg, int code) : msg_(msg),$/;"	f	class:Exception	signature:(const std::string& msg, int code)
+Exception	Exception.cc	/^Exception::Exception(const std::string& msg,$/;"	f	class:Exception	signature:(const std::string& msg, const Exception& nested, int code)
+Exception	Exception.cc	/^Exception::Exception(const std::string& msg,$/;"	f	class:Exception	signature:(const std::string& msg, const std::string& arg, int code)
+Exception	Exception.cc	/^Exception::Exception(int code) : pNested_(0), code_(code) {$/;"	f	class:Exception	signature:(int code)
+Exception	Exception.h	/^  Exception(const Exception& exc);$/;"	p	class:Exception	access:public	signature:(const Exception& exc)
+Exception	Exception.h	/^  Exception(const std::string& msg, const Exception& nested, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, const Exception& nested, int code = 0)
+Exception	Exception.h	/^  Exception(const std::string& msg, const std::string& arg, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, const std::string& arg, int code = 0)
+Exception	Exception.h	/^  Exception(const std::string& msg, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, int code = 0)
+Exception	Exception.h	/^  Exception(int code = 0);$/;"	p	class:Exception	access:protected	signature:(int code = 0)
+Exception	Exception.h	/^class Exception : public std::exception {$/;"	c	inherits:std::exception
+Exception::Exception	Exception.cc	/^Exception::Exception(const Exception& exc) : std::exception(exc),$/;"	f	class:Exception	signature:(const Exception& exc)
+Exception::Exception	Exception.cc	/^Exception::Exception(const std::string& msg, int code) : msg_(msg),$/;"	f	class:Exception	signature:(const std::string& msg, int code)
+Exception::Exception	Exception.cc	/^Exception::Exception(const std::string& msg,$/;"	f	class:Exception	signature:(const std::string& msg, const Exception& nested, int code)
+Exception::Exception	Exception.cc	/^Exception::Exception(const std::string& msg,$/;"	f	class:Exception	signature:(const std::string& msg, const std::string& arg, int code)
+Exception::Exception	Exception.cc	/^Exception::Exception(int code) : pNested_(0), code_(code) {$/;"	f	class:Exception	signature:(int code)
+Exception::Exception	Exception.h	/^  Exception(const Exception& exc);$/;"	p	class:Exception	access:public	signature:(const Exception& exc)
+Exception::Exception	Exception.h	/^  Exception(const std::string& msg, const Exception& nested, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, const Exception& nested, int code = 0)
+Exception::Exception	Exception.h	/^  Exception(const std::string& msg, const std::string& arg, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, const std::string& arg, int code = 0)
+Exception::Exception	Exception.h	/^  Exception(const std::string& msg, int code = 0);$/;"	p	class:Exception	access:public	signature:(const std::string& msg, int code = 0)
+Exception::Exception	Exception.h	/^  Exception(int code = 0);$/;"	p	class:Exception	access:protected	signature:(int code = 0)
+Exception::className	Exception.cc	/^const char* Exception::className() const throw() {$/;"	f	class:Exception	signature:() const
+Exception::className	Exception.h	/^  virtual const char* className() const throw();$/;"	p	class:Exception	access:public	signature:() const
+Exception::clone	Exception.cc	/^Exception* Exception::clone() const {$/;"	f	class:Exception	signature:() const
+Exception::clone	Exception.h	/^  virtual Exception* clone() const;$/;"	p	class:Exception	access:public	signature:() const
+Exception::code	Exception.h	/^  int code() const;$/;"	p	class:Exception	access:public	signature:() const
+Exception::code	Exception.h	/^inline int Exception::code() const {$/;"	f	class:Exception	signature:() const
+Exception::code_	Exception.h	/^  int code_;$/;"	m	class:Exception	access:private
+Exception::displayText	Exception.cc	/^std::string Exception::displayText() const {$/;"	f	class:Exception	signature:() const
+Exception::displayText	Exception.h	/^  std::string displayText() const;$/;"	p	class:Exception	access:public	signature:() const
+Exception::extenedMessage	Exception.cc	/^void Exception::extenedMessage(const std::string& arg) {$/;"	f	class:Exception	signature:(const std::string& arg)
+Exception::extenedMessage	Exception.h	/^  void extenedMessage(const std::string& arg);$/;"	p	class:Exception	access:protected	signature:(const std::string& arg)
+Exception::message	Exception.h	/^  const std::string& message() const;$/;"	p	class:Exception	access:public	signature:() const
+Exception::message	Exception.h	/^  void message(const std::string& msg);$/;"	p	class:Exception	access:protected	signature:(const std::string& msg)
+Exception::message	Exception.h	/^inline const std::string& Exception::message() const {$/;"	f	class:Exception	signature:() const
+Exception::message	Exception.h	/^inline void Exception::message(const std::string& msg) {$/;"	f	class:Exception	signature:(const std::string& msg)
+Exception::msg_	Exception.h	/^  std::string msg_;$/;"	m	class:Exception	access:private
+Exception::name	Exception.cc	/^const char* Exception::name() const throw() {$/;"	f	class:Exception	signature:() const
+Exception::name	Exception.h	/^  virtual const char* name() const throw();$/;"	p	class:Exception	access:public	signature:() const
+Exception::nested	Exception.h	/^  const Exception* nested() const ;$/;"	p	class:Exception	access:public	signature:() const
+Exception::nested	Exception.h	/^inline const Exception* Exception::nested() const {$/;"	f	class:Exception	signature:() const
+Exception::operator =	Exception.cc	/^Exception& Exception::operator= (const Exception& exc) {$/;"	f	class:Exception	signature:(const Exception& exc)
+Exception::operator =	Exception.h	/^  Exception& operator= (const Exception& exc);$/;"	p	class:Exception	access:public	signature:(const Exception& exc)
+Exception::pNested_	Exception.h	/^  Exception* pNested_;$/;"	m	class:Exception	access:private
+Exception::rethrow	Exception.cc	/^void Exception::rethrow() const {$/;"	f	class:Exception	signature:() const
+Exception::rethrow	Exception.h	/^  virtual void rethrow() const;$/;"	p	class:Exception	access:public	signature:() const
+Exception::what	Exception.cc	/^const char* Exception::what() const throw(){$/;"	f	class:Exception	signature:() const
+Exception::what	Exception.h	/^  virtual const char* what() const throw();$/;"	p	class:Exception	access:public	signature:() const
+Exception::~Exception	Exception.cc	/^Exception::~Exception() throw (){$/;"	f	class:Exception	signature:()
+Exception::~Exception	Exception.h	/^  ~Exception() throw();$/;"	p	class:Exception	access:public	signature:()
+IMPLEMENT_EXCEPTION	Exception.h	74;"	d
+NOTIFICATION_H	Notification.h	2;"	d
+Notification	Notification.cc	/^Notification::Notification() {$/;"	f	class:Notification	signature:()
+Notification	Notification.h	/^  Notification();$/;"	p	class:Notification	access:public	signature:()
+Notification	Notification.h	/^class Notification : public RefCountedObject {$/;"	c	inherits:RefCountedObject
+Notification::Notification	Notification.cc	/^Notification::Notification() {$/;"	f	class:Notification	signature:()
+Notification::Notification	Notification.h	/^  Notification();$/;"	p	class:Notification	access:public	signature:()
+Notification::Ptr	Notification.h	/^  typedef AutoPtr<Notification> Ptr;$/;"	t	class:Notification	access:public
+Notification::name	Notification.cc	/^std::string Notification::name() const {$/;"	f	class:Notification	signature:() const
+Notification::name	Notification.h	/^  virtual std::string name() const;$/;"	p	class:Notification	access:public	signature:() const
+Notification::~Notification	Notification.cc	/^Notification::~Notification() {$/;"	f	class:Notification	signature:()
+Notification::~Notification	Notification.h	/^  virtual ~Notification();$/;"	p	class:Notification	access:protected	signature:()
+Ptr	Notification.h	/^  typedef AutoPtr<Notification> Ptr;$/;"	t	class:Notification	access:public
+REF_COUNTED_OBJECT	RefCountedObject.h	2;"	d
+RUNNABLE_H	Runnable.h	2;"	d
+RefCountedObject	RefCountedObject.cc	/^RefCountedObject::RefCountedObject() : counter_(1) {$/;"	f	class:RefCountedObject	signature:()
+RefCountedObject	RefCountedObject.h	/^   RefCountedObject();$/;"	p	class:RefCountedObject	access:public	signature:()
+RefCountedObject	RefCountedObject.h	/^   RefCountedObject(const RefCountedObject&);$/;"	p	class:RefCountedObject	access:private	signature:(const RefCountedObject&)
+RefCountedObject	RefCountedObject.h	/^class RefCountedObject {$/;"	c
+RefCountedObject::RefCountedObject	RefCountedObject.cc	/^RefCountedObject::RefCountedObject() : counter_(1) {$/;"	f	class:RefCountedObject	signature:()
+RefCountedObject::RefCountedObject	RefCountedObject.h	/^   RefCountedObject();$/;"	p	class:RefCountedObject	access:public	signature:()
+RefCountedObject::RefCountedObject	RefCountedObject.h	/^   RefCountedObject(const RefCountedObject&);$/;"	p	class:RefCountedObject	access:private	signature:(const RefCountedObject&)
+RefCountedObject::counter_	RefCountedObject.h	/^   mutable int counter_;$/;"	m	class:RefCountedObject	access:private
+RefCountedObject::duplicate	RefCountedObject.h	/^   void duplicate() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+RefCountedObject::duplicate	RefCountedObject.h	/^inline void RefCountedObject::duplicate() const {$/;"	f	class:RefCountedObject	signature:() const
+RefCountedObject::operator =	RefCountedObject.h	/^   RefCountedObject& operator=(const RefCountedObject&);$/;"	p	class:RefCountedObject	access:private	signature:(const RefCountedObject&)
+RefCountedObject::referenceCount	RefCountedObject.h	/^   int referenceCount() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+RefCountedObject::referenceCount	RefCountedObject.h	/^inline int RefCountedObject::referenceCount() const {$/;"	f	class:RefCountedObject	signature:() const
+RefCountedObject::release	RefCountedObject.h	/^   void release() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+RefCountedObject::release	RefCountedObject.h	/^inline void RefCountedObject::release() const {$/;"	f	class:RefCountedObject	signature:() const
+RefCountedObject::~RefCountedObject	RefCountedObject.cc	/^RefCountedObject::~RefCountedObject() {$/;"	f	class:RefCountedObject	signature:()
+RefCountedObject::~RefCountedObject	RefCountedObject.h	/^   virtual ~RefCountedObject();$/;"	p	class:RefCountedObject	access:protected	signature:()
+Runnable	Runnable.c	/^Runnable::Runnable() {$/;"	f	class:Runnable
+Runnable	Runnable.h	/^  Runnable();$/;"	p	class:Runnable	access:public	signature:()
+Runnable	Runnable.h	/^class Runnable {$/;"	c
+Runnable::Runnable	Runnable.c	/^Runnable::Runnable() {$/;"	f	class:Runnable
+Runnable::Runnable	Runnable.h	/^  Runnable();$/;"	p	class:Runnable	access:public	signature:()
+Runnable::run	Runnable.h	/^  virtual void run() = 0;$/;"	p	class:Runnable	access:public	signature:()
+Runnable::~Runnable	Runnable.c	/^Runnable::~Runnable() {$/;"	f	class:Runnable
+Runnable::~Runnable	Runnable.h	/^  virtual ~Runnable();$/;"	p	class:Runnable	access:public	signature:()
+TIMESTAMP_H	Timestamp.h	2;"	d
+TimeDiff	Timestamp.h	/^  typedef int64_t TimeDiff;$/;"	t	class:Timestamp	access:public
+TimeVal	Timestamp.h	/^  typedef int64_t TimeVal;$/;"	t	class:Timestamp	access:public
+Timestamp	Timestamp.h	/^  Timestamp();$/;"	p	class:Timestamp	access:public	signature:()
+Timestamp	Timestamp.h	/^  Timestamp(TimeVal tv);$/;"	p	class:Timestamp	access:public	signature:(TimeVal tv)
+Timestamp	Timestamp.h	/^  Timestamp(const Timestamp& other);$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& other)
+Timestamp	Timestamp.h	/^class Timestamp {$/;"	c
+Timestamp::TimeDiff	Timestamp.h	/^  typedef int64_t TimeDiff;$/;"	t	class:Timestamp	access:public
+Timestamp::TimeVal	Timestamp.h	/^  typedef int64_t TimeVal;$/;"	t	class:Timestamp	access:public
+Timestamp::Timestamp	Timestamp.h	/^  Timestamp();$/;"	p	class:Timestamp	access:public	signature:()
+Timestamp::Timestamp	Timestamp.h	/^  Timestamp(TimeVal tv);$/;"	p	class:Timestamp	access:public	signature:(TimeVal tv)
+Timestamp::Timestamp	Timestamp.h	/^  Timestamp(const Timestamp& other);$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& other)
+Timestamp::UtcTimeVal	Timestamp.h	/^  typedef int64_t UtcTimeVal;$/;"	t	class:Timestamp	access:public
+Timestamp::elapsed	Timestamp.h	/^  TimeDiff elapsed() const;$/;"	p	class:Timestamp	access:public	signature:() const
+Timestamp::elapsed	Timestamp.h	/^inline Timestamp::TimeDiff Timestamp::elapsed() const {$/;"	f	class:Timestamp	signature:() const
+Timestamp::epochMicroseconds	Timestamp.h	/^  TimeVal epochMicroseconds() const;$/;"	p	class:Timestamp	access:public	signature:() const
+Timestamp::epochMicroseconds	Timestamp.h	/^inline Timestamp::TimeVal Timestamp::epochMicroseconds() const {$/;"	f	class:Timestamp	signature:() const
+Timestamp::epochTime	Timestamp.h	/^  std::time_t epochTime() const;$/;"	p	class:Timestamp	access:public	signature:() const
+Timestamp::epochTime	Timestamp.h	/^inline std::time_t Timestamp::epochTime() const {$/;"	f	class:Timestamp	signature:() const
+Timestamp::fromEpochTime	Timestamp.h	/^  static Timestamp fromEpochTime(std::time_t t);$/;"	p	class:Timestamp	access:public	signature:(std::time_t t)
+Timestamp::fromUtcTime	Timestamp.h	/^  static Timestamp fromUtcTime(UtcTimeVal t);$/;"	p	class:Timestamp	access:public	signature:(UtcTimeVal t)
+Timestamp::isElapsed	Timestamp.h	/^  bool isElapsed(TimeDiff interval) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff interval) const
+Timestamp::isElapsed	Timestamp.h	/^inline bool Timestamp::isElapsed(Timestamp::TimeDiff interval) const {$/;"	f	class:Timestamp	signature:(Timestamp::TimeDiff interval) const
+Timestamp::operator !=	Timestamp.h	/^  bool operator != (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator !=	Timestamp.h	/^inline bool Timestamp::operator!= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator +	Timestamp.h	/^  Timestamp operator + (TimeDiff d) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d) const
+Timestamp::operator +	Timestamp.h	/^inline Timestamp Timestamp::operator+ (TimeDiff d) const {$/;"	f	class:Timestamp	signature:(TimeDiff d) const
+Timestamp::operator +=	Timestamp.h	/^  Timestamp& operator += (TimeDiff d) ;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d)
+Timestamp::operator +=	Timestamp.h	/^inline Timestamp& Timestamp::operator+= (TimeDiff d) {$/;"	f	class:Timestamp	signature:(TimeDiff d)
+Timestamp::operator -	Timestamp.h	/^  TimeDiff  operator - (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator -	Timestamp.h	/^  Timestamp operator - (TimeDiff d) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d) const
+Timestamp::operator -	Timestamp.h	/^inline Timestamp Timestamp::operator- (TimeDiff d) const {$/;"	f	class:Timestamp	signature:(TimeDiff d) const
+Timestamp::operator -	Timestamp.h	/^inline Timestamp::TimeDiff Timestamp::operator- (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator -=	Timestamp.h	/^  Timestamp& operator -= (TimeDiff d);$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d)
+Timestamp::operator -=	Timestamp.h	/^inline Timestamp& Timestamp::operator-= (TimeDiff d) {$/;"	f	class:Timestamp	signature:(TimeDiff d)
+Timestamp::operator <	Timestamp.h	/^  bool operator <  (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator <	Timestamp.h	/^inline bool Timestamp::operator<  (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator <=	Timestamp.h	/^  bool operator <= (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator <=	Timestamp.h	/^inline bool Timestamp::operator<= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator =	Timestamp.h	/^  Timestamp& operator= (TimeVal tv);$/;"	p	class:Timestamp	access:public	signature:(TimeVal tv)
+Timestamp::operator =	Timestamp.h	/^  Timestamp& operator= (const Timestamp& other);$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& other)
+Timestamp::operator ==	Timestamp.h	/^  bool operator == (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator ==	Timestamp.h	/^inline bool Timestamp::operator== (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator >	Timestamp.h	/^  bool operator >  (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator >	Timestamp.h	/^inline bool Timestamp::operator>  (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::operator >=	Timestamp.h	/^  bool operator >= (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+Timestamp::operator >=	Timestamp.h	/^inline bool Timestamp::operator>= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+Timestamp::resolution	Timestamp.h	/^  static TimeVal resolution();$/;"	p	class:Timestamp	access:public	signature:()
+Timestamp::swap	Timestamp.h	/^  void swap(Timestamp& timestamp);$/;"	p	class:Timestamp	access:public	signature:(Timestamp& timestamp)
+Timestamp::ts_	Timestamp.h	/^  TimeVal ts_;$/;"	m	class:Timestamp	access:private
+Timestamp::update	Timestamp.h	/^  void update();$/;"	p	class:Timestamp	access:public	signature:()
+Timestamp::utcTime	Timestamp.h	/^  UtcTimeVal utcTime() const;$/;"	p	class:Timestamp	access:public	signature:() const
+Timestamp::utcTime	Timestamp.h	/^inline Timestamp::UtcTimeVal Timestamp::utcTime() const {$/;"	f	class:Timestamp	signature:() const
+Timestamp::~Timestamp	Timestamp.h	/^  ~Timestamp();$/;"	p	class:Timestamp	access:public	signature:()
+UtcTimeVal	Timestamp.h	/^  typedef int64_t UtcTimeVal;$/;"	t	class:Timestamp	access:public
+assign	AutoPtr.h	/^  AutoPtr& assign(C* ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+assign	AutoPtr.h	/^  AutoPtr& assign(C* ptr, bool shared) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr, bool shared)
+assign	AutoPtr.h	/^  AutoPtr& assign(const AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+assign	AutoPtr.h	/^  AutoPtr& assign(const AutoPtr<Other>& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+cast	AutoPtr.h	/^  AutoPtr<Other> cast()const {$/;"	f	class:AutoPtr	access:public	signature:() const
+className	Exception.cc	/^const char* Exception::className() const throw() {$/;"	f	class:Exception	signature:() const
+className	Exception.h	/^  virtual const char* className() const throw();$/;"	p	class:Exception	access:public	signature:() const
+clone	Exception.cc	/^Exception* Exception::clone() const {$/;"	f	class:Exception	signature:() const
+clone	Exception.h	/^  virtual Exception* clone() const;$/;"	p	class:Exception	access:public	signature:() const
+code	Exception.h	/^  int code() const;$/;"	p	class:Exception	access:public	signature:() const
+code	Exception.h	/^inline int Exception::code() const {$/;"	f	class:Exception	signature:() const
+code_	Exception.h	/^  int code_;$/;"	m	class:Exception	access:private
+counter_	RefCountedObject.h	/^   mutable int counter_;$/;"	m	class:RefCountedObject	access:private
+displayText	Exception.cc	/^std::string Exception::displayText() const {$/;"	f	class:Exception	signature:() const
+displayText	Exception.h	/^  std::string displayText() const;$/;"	p	class:Exception	access:public	signature:() const
+duplicate	AutoPtr.h	/^  C* duplicate() {$/;"	f	class:AutoPtr	access:public	signature:()
+duplicate	RefCountedObject.h	/^   void duplicate() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+duplicate	RefCountedObject.h	/^inline void RefCountedObject::duplicate() const {$/;"	f	class:RefCountedObject	signature:() const
+elapsed	Timestamp.h	/^  TimeDiff elapsed() const;$/;"	p	class:Timestamp	access:public	signature:() const
+elapsed	Timestamp.h	/^inline Timestamp::TimeDiff Timestamp::elapsed() const {$/;"	f	class:Timestamp	signature:() const
+epochMicroseconds	Timestamp.h	/^  TimeVal epochMicroseconds() const;$/;"	p	class:Timestamp	access:public	signature:() const
+epochMicroseconds	Timestamp.h	/^inline Timestamp::TimeVal Timestamp::epochMicroseconds() const {$/;"	f	class:Timestamp	signature:() const
+epochTime	Timestamp.h	/^  std::time_t epochTime() const;$/;"	p	class:Timestamp	access:public	signature:() const
+epochTime	Timestamp.h	/^inline std::time_t Timestamp::epochTime() const {$/;"	f	class:Timestamp	signature:() const
+extenedMessage	Exception.cc	/^void Exception::extenedMessage(const std::string& arg) {$/;"	f	class:Exception	signature:(const std::string& arg)
+extenedMessage	Exception.h	/^  void extenedMessage(const std::string& arg);$/;"	p	class:Exception	access:protected	signature:(const std::string& arg)
+fromEpochTime	Timestamp.h	/^  static Timestamp fromEpochTime(std::time_t t);$/;"	p	class:Timestamp	access:public	signature:(std::time_t t)
+fromUtcTime	Timestamp.h	/^  static Timestamp fromUtcTime(UtcTimeVal t);$/;"	p	class:Timestamp	access:public	signature:(UtcTimeVal t)
+get	AutoPtr.h	/^  C* get() {$/;"	f	class:AutoPtr	access:public	signature:()
+get	AutoPtr.h	/^  const C* get() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+isElapsed	Timestamp.h	/^  bool isElapsed(TimeDiff interval) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff interval) const
+isElapsed	Timestamp.h	/^inline bool Timestamp::isElapsed(Timestamp::TimeDiff interval) const {$/;"	f	class:Timestamp	signature:(Timestamp::TimeDiff interval) const
+isNull	AutoPtr.h	/^  bool isNull() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+message	Exception.h	/^  const std::string& message() const;$/;"	p	class:Exception	access:public	signature:() const
+message	Exception.h	/^  void message(const std::string& msg);$/;"	p	class:Exception	access:protected	signature:(const std::string& msg)
+message	Exception.h	/^inline const std::string& Exception::message() const {$/;"	f	class:Exception	signature:() const
+message	Exception.h	/^inline void Exception::message(const std::string& msg) {$/;"	f	class:Exception	signature:(const std::string& msg)
+msg_	Exception.h	/^  std::string msg_;$/;"	m	class:Exception	access:private
+name	Exception.cc	/^const char* Exception::name() const throw() {$/;"	f	class:Exception	signature:() const
+name	Exception.h	/^  virtual const char* name() const throw();$/;"	p	class:Exception	access:public	signature:() const
+name	Notification.cc	/^std::string Notification::name() const {$/;"	f	class:Notification	signature:() const
+name	Notification.h	/^  virtual std::string name() const;$/;"	p	class:Notification	access:public	signature:() const
+nested	Exception.h	/^  const Exception* nested() const ;$/;"	p	class:Exception	access:public	signature:() const
+nested	Exception.h	/^inline const Exception* Exception::nested() const {$/;"	f	class:Exception	signature:() const
+operator !	AutoPtr.h	/^  bool operator! () const {$/;"	f	class:AutoPtr	access:public	signature:() const
+operator !=	AutoPtr.h	/^  bool operator != (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator !=	AutoPtr.h	/^  bool operator != (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator !=	AutoPtr.h	/^  bool operator != (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator !=	Timestamp.h	/^  bool operator != (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator !=	Timestamp.h	/^inline bool Timestamp::operator!= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator *	AutoPtr.h	/^  C& operator* () {$/;"	f	class:AutoPtr	access:public	signature:()
+operator *	AutoPtr.h	/^  const C& operator*() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+operator +	Timestamp.h	/^  Timestamp operator + (TimeDiff d) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d) const
+operator +	Timestamp.h	/^inline Timestamp Timestamp::operator+ (TimeDiff d) const {$/;"	f	class:Timestamp	signature:(TimeDiff d) const
+operator +=	Timestamp.h	/^  Timestamp& operator += (TimeDiff d) ;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d)
+operator +=	Timestamp.h	/^inline Timestamp& Timestamp::operator+= (TimeDiff d) {$/;"	f	class:Timestamp	signature:(TimeDiff d)
+operator -	Timestamp.h	/^  TimeDiff  operator - (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator -	Timestamp.h	/^  Timestamp operator - (TimeDiff d) const;$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d) const
+operator -	Timestamp.h	/^inline Timestamp Timestamp::operator- (TimeDiff d) const {$/;"	f	class:Timestamp	signature:(TimeDiff d) const
+operator -	Timestamp.h	/^inline Timestamp::TimeDiff Timestamp::operator- (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator -=	Timestamp.h	/^  Timestamp& operator -= (TimeDiff d);$/;"	p	class:Timestamp	access:public	signature:(TimeDiff d)
+operator -=	Timestamp.h	/^inline Timestamp& Timestamp::operator-= (TimeDiff d) {$/;"	f	class:Timestamp	signature:(TimeDiff d)
+operator ->	AutoPtr.h	/^  C* operator-> () {$/;"	f	class:AutoPtr	access:public	signature:()
+operator ->	AutoPtr.h	/^  const C* operator->() const{$/;"	f	class:AutoPtr	access:public	signature:() const
+operator <	AutoPtr.h	/^  bool operator < (C* ptr)const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator <	AutoPtr.h	/^  bool operator< (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator <	AutoPtr.h	/^  bool operator< (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator <	Timestamp.h	/^  bool operator <  (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator <	Timestamp.h	/^inline bool Timestamp::operator<  (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator <=	AutoPtr.h	/^  bool operator <= (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator <=	AutoPtr.h	/^  bool operator <= (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator <=	AutoPtr.h	/^  bool operator <= (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator <=	Timestamp.h	/^  bool operator <= (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator <=	Timestamp.h	/^inline bool Timestamp::operator<= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator =	AutoPtr.h	/^  AutoPtr& operator= (C* ptr) {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr)
+operator =	AutoPtr.h	/^  AutoPtr& operator= (const AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr)
+operator =	AutoPtr.h	/^  AutoPtr& operator= (const AutoPtr<Other>& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr<Other>& ptr)
+operator =	Exception.cc	/^Exception& Exception::operator= (const Exception& exc) {$/;"	f	class:Exception	signature:(const Exception& exc)
+operator =	Exception.h	/^  Exception& operator= (const Exception& exc);$/;"	p	class:Exception	access:public	signature:(const Exception& exc)
+operator =	RefCountedObject.h	/^   RefCountedObject& operator=(const RefCountedObject&);$/;"	p	class:RefCountedObject	access:private	signature:(const RefCountedObject&)
+operator =	Timestamp.h	/^  Timestamp& operator= (TimeVal tv);$/;"	p	class:Timestamp	access:public	signature:(TimeVal tv)
+operator =	Timestamp.h	/^  Timestamp& operator= (const Timestamp& other);$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& other)
+operator ==	AutoPtr.h	/^  bool operator == (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator ==	AutoPtr.h	/^  bool operator == (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator ==	AutoPtr.h	/^  bool operator== (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator ==	Timestamp.h	/^  bool operator == (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator ==	Timestamp.h	/^inline bool Timestamp::operator== (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator >	AutoPtr.h	/^  bool operator > (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator >	AutoPtr.h	/^  bool operator > (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator >	AutoPtr.h	/^  bool operator > (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator >	Timestamp.h	/^  bool operator >  (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator >	Timestamp.h	/^inline bool Timestamp::operator>  (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator >=	AutoPtr.h	/^  bool operator >= (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
+operator >=	AutoPtr.h	/^  bool operator >= (const AutoPtr& ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const AutoPtr& ptr) const
+operator >=	AutoPtr.h	/^  bool operator >= (const C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(const C* ptr) const
+operator >=	Timestamp.h	/^  bool operator >= (const Timestamp& ts) const;$/;"	p	class:Timestamp	access:public	signature:(const Timestamp& ts) const
+operator >=	Timestamp.h	/^inline bool Timestamp::operator>= (const Timestamp& ts) const {$/;"	f	class:Timestamp	signature:(const Timestamp& ts) const
+operator C*	AutoPtr.h	/^  operator C*() {$/;"	f	class:AutoPtr	access:public	signature:()
+operator const C*	AutoPtr.h	/^  operator const C*() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+pNested_	Exception.h	/^  Exception* pNested_;$/;"	m	class:Exception	access:private
+ptr_	AutoPtr.h	/^  C* ptr_;$/;"	m	class:AutoPtr	access:private
+referenceCount	RefCountedObject.h	/^   int referenceCount() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+referenceCount	RefCountedObject.h	/^inline int RefCountedObject::referenceCount() const {$/;"	f	class:RefCountedObject	signature:() const
+release	RefCountedObject.h	/^   void release() const;$/;"	p	class:RefCountedObject	access:public	signature:() const
+release	RefCountedObject.h	/^inline void RefCountedObject::release() const {$/;"	f	class:RefCountedObject	signature:() const
+resolution	Timestamp.h	/^  static TimeVal resolution();$/;"	p	class:Timestamp	access:public	signature:()
+rethrow	Exception.cc	/^void Exception::rethrow() const {$/;"	f	class:Exception	signature:() const
+rethrow	Exception.h	/^  virtual void rethrow() const;$/;"	p	class:Exception	access:public	signature:() const
+run	Runnable.h	/^  virtual void run() = 0;$/;"	p	class:Runnable	access:public	signature:()
+swap	AutoPtr.h	/^  void swap(AutoPtr& ptr) {$/;"	f	class:AutoPtr	access:public	signature:(AutoPtr& ptr)
+swap	AutoPtr.h	/^inline void swap(AutoPtr<C>& p1, AutoPtr<C>& p2) {$/;"	f	signature:(AutoPtr<C>& p1, AutoPtr<C>& p2)
+swap	Timestamp.h	/^  void swap(Timestamp& timestamp);$/;"	p	class:Timestamp	access:public	signature:(Timestamp& timestamp)
+ts_	Timestamp.h	/^  TimeVal ts_;$/;"	m	class:Timestamp	access:private
+unsafeCase	AutoPtr.h	/^  AutoPtr<Other> unsafeCase() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+update	Timestamp.h	/^  void update();$/;"	p	class:Timestamp	access:public	signature:()
+utcTime	Timestamp.h	/^  UtcTimeVal utcTime() const;$/;"	p	class:Timestamp	access:public	signature:() const
+utcTime	Timestamp.h	/^inline Timestamp::UtcTimeVal Timestamp::utcTime() const {$/;"	f	class:Timestamp	signature:() const
+what	Exception.cc	/^const char* Exception::what() const throw(){$/;"	f	class:Exception	signature:() const
+what	Exception.h	/^  virtual const char* what() const throw();$/;"	p	class:Exception	access:public	signature:() const
+~AutoPtr	AutoPtr.h	/^  ~AutoPtr() {$/;"	f	class:AutoPtr	access:public	signature:()
+~Exception	Exception.cc	/^Exception::~Exception() throw (){$/;"	f	class:Exception	signature:()
+~Exception	Exception.h	/^  ~Exception() throw();$/;"	p	class:Exception	access:public	signature:()
+~Notification	Notification.cc	/^Notification::~Notification() {$/;"	f	class:Notification	signature:()
+~Notification	Notification.h	/^  virtual ~Notification();$/;"	p	class:Notification	access:protected	signature:()
+~RefCountedObject	RefCountedObject.cc	/^RefCountedObject::~RefCountedObject() {$/;"	f	class:RefCountedObject	signature:()
+~RefCountedObject	RefCountedObject.h	/^   virtual ~RefCountedObject();$/;"	p	class:RefCountedObject	access:protected	signature:()
+~Runnable	Runnable.c	/^Runnable::~Runnable() {$/;"	f	class:Runnable
+~Runnable	Runnable.h	/^  virtual ~Runnable();$/;"	p	class:Runnable	access:public	signature:()
+~Timestamp	Timestamp.h	/^  ~Timestamp();$/;"	p	class:Timestamp	access:public	signature:()
