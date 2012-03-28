@@ -6,6 +6,8 @@
 //This template class implements an adapter that sits between 
 //a NotificationCenter and an object receving notifications from it.
 
+//@param C :  the target object
+//@param N :  the notification  the target object interested in.
 template<class C, class N>
 class Observer : public AbstractObserver{
  public:

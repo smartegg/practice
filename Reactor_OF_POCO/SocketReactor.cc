@@ -1,6 +1,8 @@
 #include "SocketReactor.h"
+
 #include "Socket.h"
 #include "AbstractObserver.h"
+#include "ErrorHandler.h"
 
 SocketReactor::SocketReactor() 
   : stop_(false),

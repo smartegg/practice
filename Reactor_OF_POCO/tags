@@ -84,7 +84,36 @@ DAYS	Timespan.cc	/^const Timespan::TimeDiff Timespan::DAYS =$/;"	m	class:Timespa
 DAYS	Timespan.h	/^  static const TimeDiff DAYS;$/;"	m	class:Timespan	access:public
 DECLARE_EXCEPTION	Exception.h	73;"	d
 DECLARE_EXCEPTION_CODE	Exception.h	57;"	d
+DEFAULT_TIMEOUT	SocketReactor.h	/^    DEFAULT_TIMEOUT = 250000$/;"	e	enum:SocketReactor::__anon5
+ERROR_HANDLER_H	ErrorHandler.h	2;"	d
 EXCEPTION_H	Exception.h	2;"	d
+ErrorHandler	ErrorHandler.cc	/^ErrorHandler::ErrorHandler() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler	ErrorHandler.h	/^  ErrorHandler();$/;"	p	class:ErrorHandler	access:public	signature:()
+ErrorHandler	ErrorHandler.h	/^class ErrorHandler {$/;"	c
+ErrorHandler::ErrorHandler	ErrorHandler.cc	/^ErrorHandler::ErrorHandler() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::ErrorHandler	ErrorHandler.h	/^  ErrorHandler();$/;"	p	class:ErrorHandler	access:public	signature:()
+ErrorHandler::defaultHandler	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::defaultHandler() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::defaultHandler	ErrorHandler.h	/^  static ErrorHandler* defaultHandler();$/;"	p	class:ErrorHandler	access:protected	signature:()
+ErrorHandler::exception	ErrorHandler.cc	/^void ErrorHandler::exception() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::exception	ErrorHandler.cc	/^void ErrorHandler::exception(const Exception& exc) {$/;"	f	class:ErrorHandler	signature:(const Exception& exc)
+ErrorHandler::exception	ErrorHandler.cc	/^void ErrorHandler::exception(const std::exception& exc) {$/;"	f	class:ErrorHandler	signature:(const std::exception& exc)
+ErrorHandler::exception	ErrorHandler.h	/^  virtual void exception();$/;"	p	class:ErrorHandler	access:public	signature:()
+ErrorHandler::exception	ErrorHandler.h	/^  virtual void exception(const Exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const Exception& exc)
+ErrorHandler::exception	ErrorHandler.h	/^  virtual void exception(const std::exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const std::exception& exc)
+ErrorHandler::get	ErrorHandler.h	/^  static ErrorHandler* get();$/;"	p	class:ErrorHandler	access:public	signature:()
+ErrorHandler::get	ErrorHandler.h	/^inline ErrorHandler* ErrorHandler::get() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::handle	ErrorHandler.cc	/^void ErrorHandler::handle() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::handle	ErrorHandler.cc	/^void ErrorHandler::handle(const Exception& exc) {$/;"	f	class:ErrorHandler	signature:(const Exception& exc)
+ErrorHandler::handle	ErrorHandler.cc	/^void ErrorHandler::handle(const std::exception& exc) {$/;"	f	class:ErrorHandler	signature:(const std::exception& exc)
+ErrorHandler::handle	ErrorHandler.h	/^  static void handle();$/;"	p	class:ErrorHandler	access:public	signature:()
+ErrorHandler::handle	ErrorHandler.h	/^  static void handle(const Exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const Exception& exc)
+ErrorHandler::handle	ErrorHandler.h	/^  static void handle(const std::exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const std::exception& exc)
+ErrorHandler::pHandler_	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::pHandler_ = $/;"	m	class:ErrorHandler	file:
+ErrorHandler::pHandler_	ErrorHandler.h	/^  static ErrorHandler* pHandler_;$/;"	m	class:ErrorHandler	access:private
+ErrorHandler::set	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::set(ErrorHandler* pHandler) {$/;"	f	class:ErrorHandler	signature:(ErrorHandler* pHandler)
+ErrorHandler::set	ErrorHandler.h	/^  static ErrorHandler* set(ErrorHandler* pHandler);$/;"	p	class:ErrorHandler	access:public	signature:(ErrorHandler* pHandler)
+ErrorHandler::~ErrorHandler	ErrorHandler.cc	/^ErrorHandler::~ErrorHandler() {$/;"	f	class:ErrorHandler	signature:()
+ErrorHandler::~ErrorHandler	ErrorHandler.h	/^  virtual ~ErrorHandler();$/;"	p	class:ErrorHandler	access:public	signature:()
 ErrorNotification	SocketNotification.cc	/^ErrorNotification::ErrorNotification( $/;"	f	class:ErrorNotification	signature:( SocketReactor* pReactor)
 ErrorNotification	SocketNotification.h	/^  ErrorNotification(SocketReactor* pReactor);$/;"	p	class:ErrorNotification	access:public	signature:(SocketReactor* pReactor)
 ErrorNotification	SocketNotification.h	/^class  ErrorNotification : public SocketNotification {$/;"	c	inherits:SocketNotification
@@ -92,6 +121,8 @@ ErrorNotification::ErrorNotification	SocketNotification.cc	/^ErrorNotification::
 ErrorNotification::ErrorNotification	SocketNotification.h	/^  ErrorNotification(SocketReactor* pReactor);$/;"	p	class:ErrorNotification	access:public	signature:(SocketReactor* pReactor)
 ErrorNotification::~ErrorNotification	SocketNotification.cc	/^ErrorNotification::~ErrorNotification() {$/;"	f	class:ErrorNotification	signature:()
 ErrorNotification::~ErrorNotification	SocketNotification.h	/^  ~ErrorNotification();$/;"	p	class:ErrorNotification	access:public	signature:()
+EventHandlerMap	SocketReactor.h	/^  typedef std::map<Socket, NotifierPtr> EventHandlerMap;$/;"	t	class:SocketReactor	access:private
+EventSet	SocketNotifier.h	/^  typedef std::multiset<SocketNotification*> EventSet;$/;"	t	class:SocketNotifier	access:private
 Exception	Exception.cc	/^Exception::Exception(const Exception& exc) : std::exception(exc),$/;"	f	class:Exception	signature:(const Exception& exc)
 Exception	Exception.cc	/^Exception::Exception(const std::string& msg, int code) : msg_(msg),$/;"	f	class:Exception	signature:(const std::string& msg, int code)
 Exception	Exception.cc	/^Exception::Exception(const std::string& msg,$/;"	f	class:Exception	signature:(const std::string& msg, const Exception& nested, int code)
@@ -173,7 +204,7 @@ IPAddress::IPAddress	IPAddress.h	/^  explicit IPAddress(Family family);$/;"	p	cl
 IPAddress::IPAddress	IPAddress.h	/^  explicit IPAddress(const std::string& addr);$/;"	p	class:IPAddress	access:public	signature:(const std::string& addr)
 IPAddress::IPv4	IPAddress.h	/^    IPv4,$/;"	e	enum:IPAddress::Family
 IPAddress::IPv6	IPAddress.h	/^    IPv6$/;"	e	enum:IPAddress::Family
-IPAddress::MAX_ADDRESS_LEN	IPAddress.h	/^    MAX_ADDRESS_LEN = sizeof(struct in6_addr)$/;"	e	enum:IPAddress::__anon2
+IPAddress::MAX_ADDRESS_LEN	IPAddress.h	/^    MAX_ADDRESS_LEN = sizeof(struct in6_addr)$/;"	e	enum:IPAddress::__anon3
 IPAddress::addr	IPAddress.cc	/^const void* IPAddress::addr() const {$/;"	f	class:IPAddress	signature:() const
 IPAddress::addr	IPAddress.h	/^  const void* addr() const;$/;"	p	class:IPAddress	access:public	signature:() const
 IPAddress::af	IPAddress.cc	/^int IPAddress::af() const {$/;"	f	class:IPAddress	signature:() const
@@ -279,7 +310,7 @@ IdleNotification::IdleNotification	SocketNotification.cc	/^IdleNotification::Idl
 IdleNotification::IdleNotification	SocketNotification.h	/^  IdleNotification(SocketReactor* pReactor);$/;"	p	class:IdleNotification	access:public	signature:(SocketReactor* pReactor)
 IdleNotification::~IdleNotification	SocketNotification.cc	/^IdleNotification::~IdleNotification() {$/;"	f	class:IdleNotification	signature:()
 IdleNotification::~IdleNotification	SocketNotification.h	/^  ~IdleNotification();$/;"	p	class:IdleNotification	access:public	signature:()
-MAX_ADDRESS_LEN	IPAddress.h	/^    MAX_ADDRESS_LEN = sizeof(struct in6_addr)$/;"	e	enum:IPAddress::__anon2
+MAX_ADDRESS_LEN	IPAddress.h	/^    MAX_ADDRESS_LEN = sizeof(struct in6_addr)$/;"	e	enum:IPAddress::__anon3
 MAX_ADDRESS_LEN	SocketAddress.h	/^    MAX_ADDRESS_LEN = sizeof(struct in6_addr)$/;"	e	enum:SocketAddress::__anon1
 MILLISECONDS	Timespan.cc	/^const Timespan::TimeDiff Timespan::MILLISECONDS = 1000;$/;"	m	class:Timespan	file:
 MILLISECONDS	Timespan.h	/^  static const TimeDiff MILLISECONDS;$/;"	m	class:Timespan	access:public
@@ -306,8 +337,11 @@ NotificationCenter::NotificationCenter	NotificationCenter.h	/^  NotificationCent
 NotificationCenter::ObserverList	NotificationCenter.h	/^  typedef std::vector<AbstractObserverPtr> ObserverList;$/;"	t	class:NotificationCenter	access:private
 NotificationCenter::addObserver	NotificationCenter.cc	/^void NotificationCenter::addObserver(const AbstractObserver& observer) {$/;"	f	class:NotificationCenter	signature:(const AbstractObserver& observer)
 NotificationCenter::addObserver	NotificationCenter.h	/^  void addObserver(const AbstractObserver& observer);$/;"	p	class:NotificationCenter	access:public	signature:(const AbstractObserver& observer)
+NotificationCenter::countObservers	NotificationCenter.cc	/^std::size_t NotificationCenter::countObservers() const {$/;"	f	class:NotificationCenter	signature:() const
 NotificationCenter::countObservers	NotificationCenter.h	/^  std::size_t countObservers() const;$/;"	p	class:NotificationCenter	access:public	signature:() const
+NotificationCenter::defaultCenter	NotificationCenter.cc	/^NotificationCenter& NotificationCenter::defaultCenter() {$/;"	f	class:NotificationCenter	signature:()
 NotificationCenter::defaultCenter	NotificationCenter.h	/^  static NotificationCenter& defaultCenter();$/;"	p	class:NotificationCenter	access:public	signature:()
+NotificationCenter::hasObservers	NotificationCenter.cc	/^bool NotificationCenter::hasObservers() const {$/;"	f	class:NotificationCenter	signature:() const
 NotificationCenter::hasObservers	NotificationCenter.h	/^  bool hasObservers() const;$/;"	p	class:NotificationCenter	access:public	signature:() const
 NotificationCenter::observers_	NotificationCenter.h	/^  ObserverList observers_;$/;"	m	class:NotificationCenter	access:private
 NotificationCenter::postNotification	NotificationCenter.cc	/^void NotificationCenter::postNotification(Notification::Ptr pNotification) {$/;"	f	class:NotificationCenter	signature:(Notification::Ptr pNotification)
@@ -316,6 +350,8 @@ NotificationCenter::removeObserver	NotificationCenter.cc	/^void NotificationCent
 NotificationCenter::removeObserver	NotificationCenter.h	/^  void removeObserver(const AbstractObserver& observer);$/;"	p	class:NotificationCenter	access:public	signature:(const AbstractObserver& observer)
 NotificationCenter::~NotificationCenter	NotificationCenter.cc	/^NotificationCenter::~NotificationCenter() {$/;"	f	class:NotificationCenter	signature:()
 NotificationCenter::~NotificationCenter	NotificationCenter.h	/^  ~NotificationCenter();$/;"	p	class:NotificationCenter	access:public	signature:()
+NotificationPtr	SocketReactor.h	/^  typedef AutoPtr<SocketNotification> NotificationPtr;$/;"	t	class:SocketReactor	access:private
+NotifierPtr	SocketReactor.h	/^  typedef AutoPtr<SocketNotifier> NotifierPtr;$/;"	t	class:SocketReactor	access:private
 OBSERVER_H	Observer.h	2;"	d
 Observer	Observer.h	/^  Observer();$/;"	p	class:Observer	access:private	signature:()
 Observer	Observer.h	/^  Observer(C& object, Callback method) : pObject_(object), method_(method) {$/;"	f	class:Observer	access:public	signature:(C& object, Callback method)
@@ -390,10 +426,13 @@ SELECT_READ	SocketImpl.h	/^    SELECT_READ = 1,$/;"	e	enum:SocketImpl::SelectMod
 SELECT_WRITE	Socket.h	/^    SELECT_WRITE = 2,$/;"	e	enum:Socket::SelectMode
 SELECT_WRITE	SocketImpl.h	/^    SELECT_WRITE = 2,$/;"	e	enum:SocketImpl::SelectMode
 SHARED_PTR_H	SharedPtr.h	2;"	d
+SINGLETON_HOLDER_H	SingletonHolder.h	2;"	d
 SOCKETADDRESS_H	SocketAddress.h	2;"	d
 SOCKETIMPL_H	SocketImpl.h	2;"	d
 SOCKET_H	Socket.h	2;"	d
 SOCKET_NOTIFICATION_H	SocketNotification.h	2;"	d
+SOCKET_NOTIFIER_H	SocketNotifier.h	2;"	d
+SOCKET_REACTOR_H	SocketReactor.h	2;"	d
 STREAM_SOCKET_IMPL_H	StreamSocketImpl.h	2;"	d
 SelectMode	Socket.h	/^  enum SelectMode {$/;"	g	class:Socket	access:public
 SelectMode	SocketImpl.h	/^  enum SelectMode {$/;"	g	class:SocketImpl	access:public
@@ -458,6 +497,12 @@ ShutdownNotification::ShutdownNotification	SocketNotification.cc	/^ShutdownNotif
 ShutdownNotification::ShutdownNotification	SocketNotification.h	/^  ShutdownNotification(SocketReactor* pReactor);$/;"	p	class:ShutdownNotification	access:public	signature:(SocketReactor* pReactor)
 ShutdownNotification::~ShutdownNotification	SocketNotification.cc	/^ShutdownNotification::~ShutdownNotification() {$/;"	f	class:ShutdownNotification	signature:()
 ShutdownNotification::~ShutdownNotification	SocketNotification.h	/^  ~ShutdownNotification();$/;"	p	class:ShutdownNotification	access:public	signature:()
+SingletonHolder	SingletonHolder.h	/^  SingletonHolder() : pS_(0) {$/;"	f	class:SingletonHolder	access:public	signature:()
+SingletonHolder	SingletonHolder.h	/^class SingletonHolder {$/;"	c
+SingletonHolder::SingletonHolder	SingletonHolder.h	/^  SingletonHolder() : pS_(0) {$/;"	f	class:SingletonHolder	access:public	signature:()
+SingletonHolder::get	SingletonHolder.h	/^  S* get() {$/;"	f	class:SingletonHolder	access:public	signature:()
+SingletonHolder::pS_	SingletonHolder.h	/^  S* pS_;$/;"	m	class:SingletonHolder	access:private
+SingletonHolder::~SingletonHolder	SingletonHolder.h	/^  ~SingletonHolder() {$/;"	f	class:SingletonHolder	access:public	signature:()
 Socket	Socket.cc	/^Socket::Socket() : pImpl_(new StreamSocketImpl) {$/;"	f	class:Socket	signature:()
 Socket	Socket.cc	/^Socket::Socket(SocketImpl* impl) : pImpl_(impl) {$/;"	f	class:Socket	signature:(SocketImpl* impl)
 Socket	Socket.cc	/^Socket::Socket(const Socket& socket) : pImpl_(socket.pImpl_){$/;"	f	class:Socket	signature:(const Socket& socket)
@@ -821,6 +866,79 @@ SocketNotification::source	SocketNotification.h	/^  SocketReactor& source();$/;"
 SocketNotification::source	SocketNotification.h	/^inline SocketReactor& SocketNotification::source() {$/;"	f	class:SocketNotification	signature:()
 SocketNotification::~SocketNotification	SocketNotification.cc	/^SocketNotification::~SocketNotification(){$/;"	f	class:SocketNotification	signature:()
 SocketNotification::~SocketNotification	SocketNotification.h	/^  virtual ~SocketNotification();$/;"	p	class:SocketNotification	access:public	signature:()
+SocketNotifier	SocketNotifier.cc	/^SocketNotifier::SocketNotifier(const Socket& socket) $/;"	f	class:SocketNotifier	signature:(const Socket& socket)
+SocketNotifier	SocketNotifier.h	/^  explicit SocketNotifier(const Socket& socket);$/;"	p	class:SocketNotifier	access:public	signature:(const Socket& socket)
+SocketNotifier	SocketNotifier.h	/^class SocketNotifier : public RefCountedObject {$/;"	c	inherits:RefCountedObject
+SocketNotifier::EventSet	SocketNotifier.h	/^  typedef std::multiset<SocketNotification*> EventSet;$/;"	t	class:SocketNotifier	access:private
+SocketNotifier::SocketNotifier	SocketNotifier.cc	/^SocketNotifier::SocketNotifier(const Socket& socket) $/;"	f	class:SocketNotifier	signature:(const Socket& socket)
+SocketNotifier::SocketNotifier	SocketNotifier.h	/^  explicit SocketNotifier(const Socket& socket);$/;"	p	class:SocketNotifier	access:public	signature:(const Socket& socket)
+SocketNotifier::accepts	SocketNotifier.h	/^  bool accepts(SocketNotification* pNotification);$/;"	p	class:SocketNotifier	access:public	signature:(SocketNotification* pNotification)
+SocketNotifier::accepts	SocketNotifier.h	/^bool SocketNotifier::accepts(SocketNotification* pNotification) {$/;"	f	class:SocketNotifier	signature:(SocketNotification* pNotification)
+SocketNotifier::addObserver	SocketNotifier.cc	/^void SocketNotifier::addObserver(SocketReactor* pReactor, const AbstractObserver& observer) {$/;"	f	class:SocketNotifier	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+SocketNotifier::addObserver	SocketNotifier.h	/^  void addObserver(SocketReactor* pReactor, const AbstractObserver& observer);$/;"	p	class:SocketNotifier	access:public	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+SocketNotifier::countObservers	SocketNotifier.h	/^  std::size_t countObservers() const;$/;"	p	class:SocketNotifier	access:public	signature:() const
+SocketNotifier::countObservers	SocketNotifier.h	/^std::size_t SocketNotifier::countObservers() const {$/;"	f	class:SocketNotifier	signature:() const
+SocketNotifier::dispatch	SocketNotifier.cc	/^void SocketNotifier::dispatch(SocketNotification* pNotification) {$/;"	f	class:SocketNotifier	signature:(SocketNotification* pNotification)
+SocketNotifier::dispatch	SocketNotifier.h	/^  void dispatch(SocketNotification* pNotification);$/;"	p	class:SocketNotifier	access:public	signature:(SocketNotification* pNotification)
+SocketNotifier::events_	SocketNotifier.h	/^  EventSet events_;$/;"	m	class:SocketNotifier	access:private
+SocketNotifier::hasObservers	SocketNotifier.h	/^  bool hasObservers() const;$/;"	p	class:SocketNotifier	access:public	signature:() const
+SocketNotifier::hasObservers	SocketNotifier.h	/^bool SocketNotifier::hasObservers() const {$/;"	f	class:SocketNotifier	signature:() const
+SocketNotifier::nc_	SocketNotifier.h	/^  NotificationCenter nc_;$/;"	m	class:SocketNotifier	access:private
+SocketNotifier::removeObserver	SocketNotifier.cc	/^void SocketNotifier::removeObserver(SocketReactor* pReactor, const AbstractObserver& observer) {$/;"	f	class:SocketNotifier	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+SocketNotifier::removeObserver	SocketNotifier.h	/^  void removeObserver(SocketReactor* pReactor, const AbstractObserver& observer);$/;"	p	class:SocketNotifier	access:public	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+SocketNotifier::socket_	SocketNotifier.h	/^  Socket socket_;$/;"	m	class:SocketNotifier	access:private
+SocketNotifier::~SocketNotifier	SocketNotifier.cc	/^SocketNotifier::~SocketNotifier() {$/;"	f	class:SocketNotifier	signature:()
+SocketNotifier::~SocketNotifier	SocketNotifier.h	/^  ~SocketNotifier();$/;"	p	class:SocketNotifier	access:protected	signature:()
+SocketReactor	SocketReactor.cc	/^SocketReactor::SocketReactor() $/;"	f	class:SocketReactor	signature:()
+SocketReactor	SocketReactor.cc	/^SocketReactor::SocketReactor(const Timespan& timeout) $/;"	f	class:SocketReactor	signature:(const Timespan& timeout)
+SocketReactor	SocketReactor.h	/^  SocketReactor();$/;"	p	class:SocketReactor	access:public	signature:()
+SocketReactor	SocketReactor.h	/^  explicit SocketReactor(const Timespan& timeout);$/;"	p	class:SocketReactor	access:public	signature:(const Timespan& timeout)
+SocketReactor	SocketReactor.h	/^class SocketReactor {$/;"	c
+SocketReactor::DEFAULT_TIMEOUT	SocketReactor.h	/^    DEFAULT_TIMEOUT = 250000$/;"	e	enum:SocketReactor::__anon5
+SocketReactor::EventHandlerMap	SocketReactor.h	/^  typedef std::map<Socket, NotifierPtr> EventHandlerMap;$/;"	t	class:SocketReactor	access:private
+SocketReactor::NotificationPtr	SocketReactor.h	/^  typedef AutoPtr<SocketNotification> NotificationPtr;$/;"	t	class:SocketReactor	access:private
+SocketReactor::NotifierPtr	SocketReactor.h	/^  typedef AutoPtr<SocketNotifier> NotifierPtr;$/;"	t	class:SocketReactor	access:private
+SocketReactor::SocketReactor	SocketReactor.cc	/^SocketReactor::SocketReactor() $/;"	f	class:SocketReactor	signature:()
+SocketReactor::SocketReactor	SocketReactor.cc	/^SocketReactor::SocketReactor(const Timespan& timeout) $/;"	f	class:SocketReactor	signature:(const Timespan& timeout)
+SocketReactor::SocketReactor	SocketReactor.h	/^  SocketReactor();$/;"	p	class:SocketReactor	access:public	signature:()
+SocketReactor::SocketReactor	SocketReactor.h	/^  explicit SocketReactor(const Timespan& timeout);$/;"	p	class:SocketReactor	access:public	signature:(const Timespan& timeout)
+SocketReactor::addEventHandler	SocketReactor.cc	/^void SocketReactor::addEventHandler($/;"	f	class:SocketReactor	signature:( const Socket& socket, const AbstractObserver& observer)
+SocketReactor::addEventHandler	SocketReactor.h	/^  void addEventHandler(const Socket& socket, $/;"	p	class:SocketReactor	access:public	signature:(const Socket& socket, const AbstractObserver& observer)
+SocketReactor::dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(NotifierPtr& pNotifier,$/;"	f	class:SocketReactor	signature:(NotifierPtr& pNotifier, SocketNotification* pNotification)
+SocketReactor::dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(SocketNotification* pNotification) {$/;"	f	class:SocketReactor	signature:(SocketNotification* pNotification)
+SocketReactor::dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(const Socket& socket,$/;"	f	class:SocketReactor	signature:(const Socket& socket, SocketNotification* pNotification)
+SocketReactor::dispatch	SocketReactor.h	/^  void dispatch(NotifierPtr& pNotifier, SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:private	signature:(NotifierPtr& pNotifier, SocketNotification* pNotification)
+SocketReactor::dispatch	SocketReactor.h	/^  void dispatch(SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:protected	signature:(SocketNotification* pNotification)
+SocketReactor::dispatch	SocketReactor.h	/^  void dispatch(const Socket& socket, SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:protected	signature:(const Socket& socket, SocketNotification* pNotification)
+SocketReactor::getTimeout	SocketReactor.cc	/^const Timespan& SocketReactor::getTimeout() const {$/;"	f	class:SocketReactor	signature:() const
+SocketReactor::getTimeout	SocketReactor.h	/^  const Timespan& getTimeout() const;$/;"	p	class:SocketReactor	access:public	signature:() const
+SocketReactor::handlers_	SocketReactor.h	/^  EventHandlerMap handlers_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::onBusy	SocketReactor.cc	/^void SocketReactor::onBusy() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::onBusy	SocketReactor.h	/^  virtual void onBusy();$/;"	p	class:SocketReactor	access:protected	signature:()
+SocketReactor::onIdle	SocketReactor.cc	/^void SocketReactor::onIdle() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::onIdle	SocketReactor.h	/^  virtual void onIdle();$/;"	p	class:SocketReactor	access:protected	signature:()
+SocketReactor::onShutdown	SocketReactor.cc	/^void SocketReactor::onShutdown() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::onShutdown	SocketReactor.h	/^  virtual void onShutdown();$/;"	p	class:SocketReactor	access:protected	signature:()
+SocketReactor::onTimeout	SocketReactor.cc	/^void SocketReactor::onTimeout() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::onTimeout	SocketReactor.h	/^  virtual void onTimeout();$/;"	p	class:SocketReactor	access:protected	signature:()
+SocketReactor::pErrorNotification_	SocketReactor.h	/^  NotificationPtr pErrorNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::pIdleNotification_	SocketReactor.h	/^  NotificationPtr pIdleNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::pReadableNotification_	SocketReactor.h	/^  NotificationPtr pReadableNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::pShutdownNotification_	SocketReactor.h	/^  NotificationPtr pShutdownNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::pTimeoutNotification_	SocketReactor.h	/^  NotificationPtr pTimeoutNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::pWritableNotification_	SocketReactor.h	/^  NotificationPtr pWritableNotification_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::removeEventHandler	SocketReactor.cc	/^void SocketReactor::removeEventHandler($/;"	f	class:SocketReactor	signature:( const Socket& socket, const AbstractObserver& observer)
+SocketReactor::removeEventHandler	SocketReactor.h	/^  void removeEventHandler(const Socket& socket,$/;"	p	class:SocketReactor	access:public	signature:(const Socket& socket, const AbstractObserver& observer)
+SocketReactor::run	SocketReactor.cc	/^void SocketReactor::run() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::run	SocketReactor.h	/^  void run();$/;"	p	class:SocketReactor	access:public	signature:()
+SocketReactor::setTimeout	SocketReactor.cc	/^void SocketReactor::setTimeout(const Timespan& timeout) {$/;"	f	class:SocketReactor	signature:(const Timespan& timeout)
+SocketReactor::setTimeout	SocketReactor.h	/^  void setTimeout(const Timespan& timeout);$/;"	p	class:SocketReactor	access:public	signature:(const Timespan& timeout)
+SocketReactor::stop	SocketReactor.cc	/^void SocketReactor::stop() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::stop	SocketReactor.h	/^  void stop();$/;"	p	class:SocketReactor	access:public	signature:()
+SocketReactor::stop_	SocketReactor.h	/^  bool stop_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::timeout_	SocketReactor.h	/^  Timespan timeout_;$/;"	m	class:SocketReactor	access:private
+SocketReactor::~SocketReactor	SocketReactor.cc	/^SocketReactor::~SocketReactor() {$/;"	f	class:SocketReactor	signature:()
+SocketReactor::~SocketReactor	SocketReactor.h	/^  virtual ~SocketReactor();$/;"	p	class:SocketReactor	access:public	signature:()
 StreamSocketImpl	StreamSocketImpl.cc	/^StreamSocketImpl::StreamSocketImpl() {$/;"	f	class:StreamSocketImpl	signature:()
 StreamSocketImpl	StreamSocketImpl.cc	/^StreamSocketImpl::StreamSocketImpl(IPAddress::Family addressFamily) {$/;"	f	class:StreamSocketImpl	signature:(IPAddress::Family addressFamily)
 StreamSocketImpl	StreamSocketImpl.cc	/^StreamSocketImpl::StreamSocketImpl(int sockfd) : SocketImpl(sockfd) {$/;"	f	class:StreamSocketImpl	signature:(int sockfd)
@@ -1032,12 +1150,20 @@ WritableNotification::WritableNotification	SocketNotification.cc	/^WritableNotif
 WritableNotification::WritableNotification	SocketNotification.h	/^  WritableNotification(SocketReactor* pReactor);$/;"	p	class:WritableNotification	access:public	signature:(SocketReactor* pReactor)
 WritableNotification::~WritableNotification	SocketNotification.cc	/^WritableNotification::~WritableNotification() {$/;"	f	class:WritableNotification	signature:()
 WritableNotification::~WritableNotification	SocketNotification.h	/^  ~WritableNotification();$/;"	p	class:WritableNotification	access:public	signature:()
+__anon2::sh	NotificationCenter.cc	/^  static SingletonHolder<NotificationCenter> sh;$/;"	m	namespace:__anon2	file:
+__anon4::nullSocket	SocketNotifier.cc	/^  static Socket nullSocket;$/;"	m	namespace:__anon4	file:
 acceptConnection	SocketImpl.cc	/^SocketImpl* SocketImpl::acceptConnection(SocketAddress& clientAddr) {$/;"	f	class:SocketImpl	signature:(SocketAddress& clientAddr)
 acceptConnection	SocketImpl.h	/^  virtual SocketImpl* acceptConnection(SocketAddress& clientAddr);$/;"	p	class:SocketImpl	access:public	signature:(SocketAddress& clientAddr)
 accepts	AbstractObserver.h	/^  virtual bool accepts(Notification* pNf) const = 0;$/;"	p	class:AbstractObserver	access:public	signature:(Notification* pNf) const
 accepts	Observer.h	/^  bool accepts(Notification* pNf) const {$/;"	f	class:Observer	access:public	signature:(Notification* pNf) const
+accepts	SocketNotifier.h	/^  bool accepts(SocketNotification* pNotification);$/;"	p	class:SocketNotifier	access:public	signature:(SocketNotification* pNotification)
+accepts	SocketNotifier.h	/^bool SocketNotifier::accepts(SocketNotification* pNotification) {$/;"	f	class:SocketNotifier	signature:(SocketNotification* pNotification)
+addEventHandler	SocketReactor.cc	/^void SocketReactor::addEventHandler($/;"	f	class:SocketReactor	signature:( const Socket& socket, const AbstractObserver& observer)
+addEventHandler	SocketReactor.h	/^  void addEventHandler(const Socket& socket, $/;"	p	class:SocketReactor	access:public	signature:(const Socket& socket, const AbstractObserver& observer)
 addObserver	NotificationCenter.cc	/^void NotificationCenter::addObserver(const AbstractObserver& observer) {$/;"	f	class:NotificationCenter	signature:(const AbstractObserver& observer)
 addObserver	NotificationCenter.h	/^  void addObserver(const AbstractObserver& observer);$/;"	p	class:NotificationCenter	access:public	signature:(const AbstractObserver& observer)
+addObserver	SocketNotifier.cc	/^void SocketNotifier::addObserver(SocketReactor* pReactor, const AbstractObserver& observer) {$/;"	f	class:SocketNotifier	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+addObserver	SocketNotifier.h	/^  void addObserver(SocketReactor* pReactor, const AbstractObserver& observer);$/;"	p	class:SocketNotifier	access:public	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
 addr	IPAddress.cc	/^  const void* addr() const {$/;"	f	class:IPv4AddressImpl	access:public	signature:() const
 addr	IPAddress.cc	/^  virtual const void* addr() const = 0;$/;"	p	class:IPAddressImpl	file:	access:public	signature:() const
 addr	IPAddress.cc	/^const void* IPAddress::addr() const {$/;"	f	class:IPAddress	signature:() const
@@ -1103,14 +1229,28 @@ connect	SocketImpl.h	/^  virtual void connect(const SocketAddress& address);$/;"
 connect	SocketImpl.h	/^  virtual void connect(const SocketAddress& address,$/;"	p	class:SocketImpl	access:public	signature:(const SocketAddress& address, const Timespan& timespan)
 connectNB	SocketImpl.cc	/^void SocketImpl::connectNB(const SocketAddress& address) {$/;"	f	class:SocketImpl	signature:(const SocketAddress& address)
 connectNB	SocketImpl.h	/^  virtual void connectNB(const SocketAddress& address);$/;"	p	class:SocketImpl	access:public	signature:(const SocketAddress& address)
+countObservers	NotificationCenter.cc	/^std::size_t NotificationCenter::countObservers() const {$/;"	f	class:NotificationCenter	signature:() const
 countObservers	NotificationCenter.h	/^  std::size_t countObservers() const;$/;"	p	class:NotificationCenter	access:public	signature:() const
+countObservers	SocketNotifier.h	/^  std::size_t countObservers() const;$/;"	p	class:SocketNotifier	access:public	signature:() const
+countObservers	SocketNotifier.h	/^std::size_t SocketNotifier::countObservers() const {$/;"	f	class:SocketNotifier	signature:() const
 counter_	RefCountedObject.h	/^   mutable int counter_;$/;"	m	class:RefCountedObject	access:private
 days	Timespan.h	/^  int days() const;$/;"	p	class:Timespan	access:public	signature:() const
 days	Timespan.h	/^inline int Timespan::days() const {$/;"	f	class:Timespan	signature:() const
 decref	SharedPtr.h	/^  C* decref() const {$/;"	f	class:SharedPtr	access:private	signature:() const
+defaultCenter	NotificationCenter.cc	/^NotificationCenter& NotificationCenter::defaultCenter() {$/;"	f	class:NotificationCenter	signature:()
 defaultCenter	NotificationCenter.h	/^  static NotificationCenter& defaultCenter();$/;"	p	class:NotificationCenter	access:public	signature:()
+defaultHandler	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::defaultHandler() {$/;"	f	class:ErrorHandler	signature:()
+defaultHandler	ErrorHandler.h	/^  static ErrorHandler* defaultHandler();$/;"	p	class:ErrorHandler	access:protected	signature:()
 disable	AbstractObserver.h	/^  virtual void disable() = 0;$/;"	p	class:AbstractObserver	access:public	signature:()
 disable	Observer.h	/^  void disable() {$/;"	f	class:Observer	access:public	signature:()
+dispatch	SocketNotifier.cc	/^void SocketNotifier::dispatch(SocketNotification* pNotification) {$/;"	f	class:SocketNotifier	signature:(SocketNotification* pNotification)
+dispatch	SocketNotifier.h	/^  void dispatch(SocketNotification* pNotification);$/;"	p	class:SocketNotifier	access:public	signature:(SocketNotification* pNotification)
+dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(NotifierPtr& pNotifier,$/;"	f	class:SocketReactor	signature:(NotifierPtr& pNotifier, SocketNotification* pNotification)
+dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(SocketNotification* pNotification) {$/;"	f	class:SocketReactor	signature:(SocketNotification* pNotification)
+dispatch	SocketReactor.cc	/^void SocketReactor::dispatch(const Socket& socket,$/;"	f	class:SocketReactor	signature:(const Socket& socket, SocketNotification* pNotification)
+dispatch	SocketReactor.h	/^  void dispatch(NotifierPtr& pNotifier, SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:private	signature:(NotifierPtr& pNotifier, SocketNotification* pNotification)
+dispatch	SocketReactor.h	/^  void dispatch(SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:protected	signature:(SocketNotification* pNotification)
+dispatch	SocketReactor.h	/^  void dispatch(const Socket& socket, SocketNotification* pNotification);$/;"	p	class:SocketReactor	access:protected	signature:(const Socket& socket, SocketNotification* pNotification)
 displayText	Exception.cc	/^std::string Exception::displayText() const {$/;"	f	class:Exception	signature:() const
 displayText	Exception.h	/^  std::string displayText() const;$/;"	p	class:Exception	access:public	signature:() const
 duplicate	AutoPtr.h	/^  C* duplicate() {$/;"	f	class:AutoPtr	access:public	signature:()
@@ -1133,6 +1273,13 @@ error	SocketImpl.h	/^  static void error();$/;"	p	class:SocketImpl	access:protec
 error	SocketImpl.h	/^  static void error(const std::string& arg);$/;"	p	class:SocketImpl	access:protected	signature:(const std::string& arg)
 error	SocketImpl.h	/^  static void error(int code);$/;"	p	class:SocketImpl	access:protected	signature:(int code)
 error	SocketImpl.h	/^  static void error(int code, const std::string& arg);$/;"	p	class:SocketImpl	access:protected	signature:(int code, const std::string& arg)
+events_	SocketNotifier.h	/^  EventSet events_;$/;"	m	class:SocketNotifier	access:private
+exception	ErrorHandler.cc	/^void ErrorHandler::exception() {$/;"	f	class:ErrorHandler	signature:()
+exception	ErrorHandler.cc	/^void ErrorHandler::exception(const Exception& exc) {$/;"	f	class:ErrorHandler	signature:(const Exception& exc)
+exception	ErrorHandler.cc	/^void ErrorHandler::exception(const std::exception& exc) {$/;"	f	class:ErrorHandler	signature:(const std::exception& exc)
+exception	ErrorHandler.h	/^  virtual void exception();$/;"	p	class:ErrorHandler	access:public	signature:()
+exception	ErrorHandler.h	/^  virtual void exception(const Exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const Exception& exc)
+exception	ErrorHandler.h	/^  virtual void exception(const std::exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const std::exception& exc)
 extenedMessage	Exception.cc	/^void Exception::extenedMessage(const std::string& arg) {$/;"	f	class:Exception	signature:(const std::string& arg)
 extenedMessage	Exception.h	/^  void extenedMessage(const std::string& arg);$/;"	p	class:Exception	access:protected	signature:(const std::string& arg)
 family	IPAddress.cc	/^  IPAddress::Family family() const {$/;"	f	class:IPv4AddressImpl	access:public	signature:() const
@@ -1146,8 +1293,11 @@ fromUtcTime	Timestamp.cc	/^Timestamp Timestamp::fromUtcTime(UtcTimeVal val) {$/;
 fromUtcTime	Timestamp.h	/^  static Timestamp fromUtcTime(UtcTimeVal t);$/;"	p	class:Timestamp	access:public	signature:(UtcTimeVal t)
 get	AutoPtr.h	/^  C* get() {$/;"	f	class:AutoPtr	access:public	signature:()
 get	AutoPtr.h	/^  const C* get() const {$/;"	f	class:AutoPtr	access:public	signature:() const
+get	ErrorHandler.h	/^  static ErrorHandler* get();$/;"	p	class:ErrorHandler	access:public	signature:()
+get	ErrorHandler.h	/^inline ErrorHandler* ErrorHandler::get() {$/;"	f	class:ErrorHandler	signature:()
 get	SharedPtr.h	/^  C* get() {$/;"	f	class:SharedPtr	access:public	signature:()
 get	SharedPtr.h	/^  const C* get() const {$/;"	f	class:SharedPtr	access:public	signature:() const
+get	SingletonHolder.h	/^  S* get() {$/;"	f	class:SingletonHolder	access:public	signature:()
 getBlocking	Socket.h	/^  bool getBlocking()const;$/;"	p	class:Socket	access:public	signature:() const
 getBlocking	Socket.h	/^inline bool Socket::getBlocking() const{$/;"	f	class:Socket	signature:() const
 getBlocking	SocketImpl.h	/^  virtual bool getBlocking() const;$/;"	p	class:SocketImpl	access:public	signature:() const
@@ -1216,7 +1366,19 @@ getSendTimeout	Socket.h	/^  Timespan getSendTimeout() const;$/;"	p	class:Socket	
 getSendTimeout	Socket.h	/^inline Timespan Socket::getSendTimeout() const{$/;"	f	class:Socket	signature:() const
 getSendTimeout	SocketImpl.cc	/^Timespan SocketImpl::getSendTimeout() {$/;"	f	class:SocketImpl	signature:()
 getSendTimeout	SocketImpl.h	/^  virtual Timespan getSendTimeout();$/;"	p	class:SocketImpl	access:public	signature:()
+getTimeout	SocketReactor.cc	/^const Timespan& SocketReactor::getTimeout() const {$/;"	f	class:SocketReactor	signature:() const
+getTimeout	SocketReactor.h	/^  const Timespan& getTimeout() const;$/;"	p	class:SocketReactor	access:public	signature:() const
+handle	ErrorHandler.cc	/^void ErrorHandler::handle() {$/;"	f	class:ErrorHandler	signature:()
+handle	ErrorHandler.cc	/^void ErrorHandler::handle(const Exception& exc) {$/;"	f	class:ErrorHandler	signature:(const Exception& exc)
+handle	ErrorHandler.cc	/^void ErrorHandler::handle(const std::exception& exc) {$/;"	f	class:ErrorHandler	signature:(const std::exception& exc)
+handle	ErrorHandler.h	/^  static void handle();$/;"	p	class:ErrorHandler	access:public	signature:()
+handle	ErrorHandler.h	/^  static void handle(const Exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const Exception& exc)
+handle	ErrorHandler.h	/^  static void handle(const std::exception& exc);$/;"	p	class:ErrorHandler	access:public	signature:(const std::exception& exc)
+handlers_	SocketReactor.h	/^  EventHandlerMap handlers_;$/;"	m	class:SocketReactor	access:private
+hasObservers	NotificationCenter.cc	/^bool NotificationCenter::hasObservers() const {$/;"	f	class:NotificationCenter	signature:() const
 hasObservers	NotificationCenter.h	/^  bool hasObservers() const;$/;"	p	class:NotificationCenter	access:public	signature:() const
+hasObservers	SocketNotifier.h	/^  bool hasObservers() const;$/;"	p	class:SocketNotifier	access:public	signature:() const
+hasObservers	SocketNotifier.h	/^bool SocketNotifier::hasObservers() const {$/;"	f	class:SocketNotifier	signature:() const
 host	SocketAddress.cc	/^  IPAddress host() const {$/;"	f	class:IPv4SocketAddressImpl	access:public	signature:() const
 host	SocketAddress.cc	/^  virtual IPAddress host() const = 0;$/;"	p	class:SocketAddressImpl	file:	access:public	signature:() const
 host	SocketAddress.cc	/^IPAddress SocketAddress::host() const {$/;"	f	class:SocketAddress	signature:() const
@@ -1291,11 +1453,21 @@ name	Exception.cc	/^const char* Exception::name() const throw() {$/;"	f	class:Ex
 name	Exception.h	/^  virtual const char* name() const throw();$/;"	p	class:Exception	access:public	signature:() const
 name	Notification.cc	/^std::string Notification::name() const {$/;"	f	class:Notification	signature:() const
 name	Notification.h	/^  virtual std::string name() const;$/;"	p	class:Notification	access:public	signature:() const
+nc_	SocketNotifier.h	/^  NotificationCenter nc_;$/;"	m	class:SocketNotifier	access:private
 nested	Exception.h	/^  const Exception* nested() const ;$/;"	p	class:Exception	access:public	signature:() const
 nested	Exception.h	/^inline const Exception* Exception::nested() const {$/;"	f	class:Exception	signature:() const
 notify	AbstractObserver.h	/^  virtual void notify(Notification* pNf) const = 0;$/;"	p	class:AbstractObserver	access:public	signature:(Notification* pNf) const
 notify	Observer.h	/^  void notify(Notification* pNf) const {$/;"	f	class:Observer	access:public	signature:(Notification* pNf) const
+nullSocket	SocketNotifier.cc	/^  static Socket nullSocket;$/;"	m	namespace:__anon4	file:
 observers_	NotificationCenter.h	/^  ObserverList observers_;$/;"	m	class:NotificationCenter	access:private
+onBusy	SocketReactor.cc	/^void SocketReactor::onBusy() {$/;"	f	class:SocketReactor	signature:()
+onBusy	SocketReactor.h	/^  virtual void onBusy();$/;"	p	class:SocketReactor	access:protected	signature:()
+onIdle	SocketReactor.cc	/^void SocketReactor::onIdle() {$/;"	f	class:SocketReactor	signature:()
+onIdle	SocketReactor.h	/^  virtual void onIdle();$/;"	p	class:SocketReactor	access:protected	signature:()
+onShutdown	SocketReactor.cc	/^void SocketReactor::onShutdown() {$/;"	f	class:SocketReactor	signature:()
+onShutdown	SocketReactor.h	/^  virtual void onShutdown();$/;"	p	class:SocketReactor	access:protected	signature:()
+onTimeout	SocketReactor.cc	/^void SocketReactor::onTimeout() {$/;"	f	class:SocketReactor	signature:()
+onTimeout	SocketReactor.h	/^  virtual void onTimeout();$/;"	p	class:SocketReactor	access:protected	signature:()
 operator !	AutoPtr.h	/^  bool operator! () const {$/;"	f	class:AutoPtr	access:public	signature:() const
 operator !	SharedPtr.h	/^  bool operator ! () const {$/;"	f	class:SharedPtr	access:public	signature:() const
 operator !=	AutoPtr.h	/^  bool operator != (C* ptr) const {$/;"	f	class:AutoPtr	access:public	signature:(C* ptr) const
@@ -1467,12 +1639,21 @@ operator C*	SharedPtr.h	/^  operator C* () {$/;"	f	class:SharedPtr	access:public
 operator const C*	AutoPtr.h	/^  operator const C*() const {$/;"	f	class:AutoPtr	access:public	signature:() const
 operator const C*	SharedPtr.h	/^  operator const C* () {$/;"	f	class:SharedPtr	access:public	signature:()
 pCounter_	SharedPtr.h	/^  RC* pCounter_;$/;"	m	class:SharedPtr	access:private
+pErrorNotification_	SocketReactor.h	/^  NotificationPtr pErrorNotification_;$/;"	m	class:SocketReactor	access:private
+pHandler_	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::pHandler_ = $/;"	m	class:ErrorHandler	file:
+pHandler_	ErrorHandler.h	/^  static ErrorHandler* pHandler_;$/;"	m	class:ErrorHandler	access:private
+pIdleNotification_	SocketReactor.h	/^  NotificationPtr pIdleNotification_;$/;"	m	class:SocketReactor	access:private
 pImpl_	IPAddress.h	/^  IPAddressImpl* pImpl_;$/;"	m	class:IPAddress	access:private
 pImpl_	Socket.h	/^  SocketImpl* pImpl_;$/;"	m	class:Socket	access:private
 pImpl_	SocketAddress.h	/^  SocketAddressImpl* pImpl_;$/;"	m	class:SocketAddress	access:private
 pNested_	Exception.h	/^  Exception* pNested_;$/;"	m	class:Exception	access:private
 pObject_	Observer.h	/^  C* pObject_;$/;"	m	class:Observer	access:private
 pReactor_	SocketNotification.h	/^  SocketReactor * pReactor_;$/;"	m	class:SocketNotification	access:private
+pReadableNotification_	SocketReactor.h	/^  NotificationPtr pReadableNotification_;$/;"	m	class:SocketReactor	access:private
+pS_	SingletonHolder.h	/^  S* pS_;$/;"	m	class:SingletonHolder	access:private
+pShutdownNotification_	SocketReactor.h	/^  NotificationPtr pShutdownNotification_;$/;"	m	class:SocketReactor	access:private
+pTimeoutNotification_	SocketReactor.h	/^  NotificationPtr pTimeoutNotification_;$/;"	m	class:SocketReactor	access:private
+pWritableNotification_	SocketReactor.h	/^  NotificationPtr pWritableNotification_;$/;"	m	class:SocketReactor	access:private
 parse	IPAddress.cc	/^  static IPv4AddressImpl* parse(const std::string& addr) {$/;"	f	class:IPv4AddressImpl	access:public	signature:(const std::string& addr)
 parse	IPAddress.cc	/^IPAddress IPAddress::parse(const std::string& addr) {$/;"	f	class:IPAddress	signature:(const std::string& addr)
 parse	IPAddress.h	/^  static IPAddress parse(const std::string& addr);$/;"	p	class:IPAddress	access:public	signature:(const std::string& addr)
@@ -1507,8 +1688,12 @@ release	SharedPtr.h	/^   static void release(C* pObj) {$/;"	f	class:ReleasePolic
 release	SharedPtr.h	/^  int release() {$/;"	f	class:ReferenceCounter	access:public	signature:()
 release	SharedPtr.h	/^  static void release(C* pObj) {$/;"	f	class:ReleaseArrayPolicy	access:public	signature:(C* pObj)
 release	SharedPtr.h	/^  void release() {$/;"	f	class:SharedPtr	access:private	signature:()
+removeEventHandler	SocketReactor.cc	/^void SocketReactor::removeEventHandler($/;"	f	class:SocketReactor	signature:( const Socket& socket, const AbstractObserver& observer)
+removeEventHandler	SocketReactor.h	/^  void removeEventHandler(const Socket& socket,$/;"	p	class:SocketReactor	access:public	signature:(const Socket& socket, const AbstractObserver& observer)
 removeObserver	NotificationCenter.cc	/^void NotificationCenter::removeObserver(const AbstractObserver& observer) {$/;"	f	class:NotificationCenter	signature:(const AbstractObserver& observer)
 removeObserver	NotificationCenter.h	/^  void removeObserver(const AbstractObserver& observer);$/;"	p	class:NotificationCenter	access:public	signature:(const AbstractObserver& observer)
+removeObserver	SocketNotifier.cc	/^void SocketNotifier::removeObserver(SocketReactor* pReactor, const AbstractObserver& observer) {$/;"	f	class:SocketNotifier	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
+removeObserver	SocketNotifier.h	/^  void removeObserver(SocketReactor* pReactor, const AbstractObserver& observer);$/;"	p	class:SocketNotifier	access:public	signature:(SocketReactor* pReactor, const AbstractObserver& observer)
 reset	SocketImpl.cc	/^void SocketImpl::reset(int fd) {$/;"	f	class:SocketImpl	signature:(int fd)
 reset	SocketImpl.h	/^  void reset(int fd = -1);$/;"	p	class:SocketImpl	access:protected	signature:(int fd = -1)
 resolution	Timestamp.h	/^  static TimeVal resolution();$/;"	p	class:Timestamp	access:public	signature:()
@@ -1518,6 +1703,8 @@ resolveService	SocketAddress.h	/^  uint16_t resolveService(const std::string& se
 rethrow	Exception.cc	/^void Exception::rethrow() const {$/;"	f	class:Exception	signature:() const
 rethrow	Exception.h	/^  virtual void rethrow() const;$/;"	p	class:Exception	access:public	signature:() const
 run	Runnable.h	/^  virtual void run() = 0;$/;"	p	class:Runnable	access:public	signature:()
+run	SocketReactor.cc	/^void SocketReactor::run() {$/;"	f	class:SocketReactor	signature:()
+run	SocketReactor.h	/^  void run();$/;"	p	class:SocketReactor	access:public	signature:()
 seconds	Timespan.h	/^  int seconds() const;$/;"	p	class:Timespan	access:public	signature:() const
 seconds	Timespan.h	/^inline int Timespan::seconds() const {$/;"	f	class:Timespan	signature:() const
 select	Socket.cc	/^int Socket::select(SocketList& readList, SocketList& writeList,$/;"	f	class:Socket	signature:(SocketList& readList, SocketList& writeList, SocketList& exceptList, const Timespan& timeout)
@@ -1531,6 +1718,8 @@ sendTo	SocketImpl.cc	/^int SocketImpl::sendTo(const void* buffer, int length,$/;
 sendTo	SocketImpl.h	/^  virtual int sendTo(const void* buffer, int length,$/;"	p	class:SocketImpl	access:public	signature:(const void* buffer, int length, const SocketAddress& address, int flags = 0)
 sendUrgent	SocketImpl.cc	/^void SocketImpl::sendUrgent(unsigned char data) {$/;"	f	class:SocketImpl	signature:(unsigned char data)
 sendUrgent	SocketImpl.h	/^  virtual void sendUrgent(unsigned char data);$/;"	p	class:SocketImpl	access:public	signature:(unsigned char data)
+set	ErrorHandler.cc	/^ErrorHandler* ErrorHandler::set(ErrorHandler* pHandler) {$/;"	f	class:ErrorHandler	signature:(ErrorHandler* pHandler)
+set	ErrorHandler.h	/^  static ErrorHandler* set(ErrorHandler* pHandler);$/;"	p	class:ErrorHandler	access:public	signature:(ErrorHandler* pHandler)
 setBlocking	Socket.h	/^  void setBlocking(bool flag);$/;"	p	class:Socket	access:public	signature:(bool flag)
 setBlocking	Socket.h	/^inline void Socket::setBlocking(bool flag) {$/;"	f	class:Socket	signature:(bool flag)
 setBlocking	SocketImpl.cc	/^void SocketImpl::setBlocking(bool flag) {$/;"	f	class:SocketImpl	signature:(bool flag)
@@ -1601,6 +1790,9 @@ setSendTimeout	SocketImpl.cc	/^void SocketImpl::setSendTimeout(const Timespan& t
 setSendTimeout	SocketImpl.h	/^  virtual void setSendTimeout(const Timespan& timeout);$/;"	p	class:SocketImpl	access:public	signature:(const Timespan& timeout)
 setSocket	SocketNotification.cc	/^void SocketNotification::setSocket(const Socket& socket) {$/;"	f	class:SocketNotification	signature:(const Socket& socket)
 setSocket	SocketNotification.h	/^  void setSocket(const Socket& socket);$/;"	p	class:SocketNotification	access:private	signature:(const Socket& socket)
+setTimeout	SocketReactor.cc	/^void SocketReactor::setTimeout(const Timespan& timeout) {$/;"	f	class:SocketReactor	signature:(const Timespan& timeout)
+setTimeout	SocketReactor.h	/^  void setTimeout(const Timespan& timeout);$/;"	p	class:SocketReactor	access:public	signature:(const Timespan& timeout)
+sh	NotificationCenter.cc	/^  static SingletonHolder<NotificationCenter> sh;$/;"	m	namespace:__anon2	file:
 shutdown	SocketImpl.cc	/^void SocketImpl::shutdown() {$/;"	f	class:SocketImpl	signature:()
 shutdown	SocketImpl.h	/^  virtual void shutdown();$/;"	p	class:SocketImpl	access:public	signature:()
 shutdownReceive	SocketImpl.cc	/^void SocketImpl::shutdownReceive() {$/;"	f	class:SocketImpl	signature:()
@@ -1612,6 +1804,7 @@ socket	SocketNotification.h	/^inline Socket& SocketNotification::socket() {$/;"	
 socketError	SocketImpl.cc	/^int SocketImpl::socketError() {$/;"	f	class:SocketImpl	signature:()
 socketError	SocketImpl.h	/^  int socketError();$/;"	p	class:SocketImpl	access:public	signature:()
 socket_	SocketNotification.h	/^  Socket socket_;$/;"	m	class:SocketNotification	access:private
+socket_	SocketNotifier.h	/^  Socket socket_;$/;"	m	class:SocketNotifier	access:private
 sockfd	Socket.h	/^  int sockfd() const;$/;"	p	class:Socket	access:protected	signature:() const
 sockfd	Socket.h	/^inline int Socket::sockfd() const {$/;"	f	class:Socket	signature:() const
 sockfd	SocketImpl.h	/^  int sockfd() const;$/;"	p	class:SocketImpl	access:public	signature:() const
@@ -1620,6 +1813,9 @@ sockfd_	SocketImpl.h	/^  int sockfd_;$/;"	m	class:SocketImpl	access:private
 source	SocketNotification.h	/^  SocketReactor& source();$/;"	p	class:SocketNotification	access:public	signature:()
 source	SocketNotification.h	/^inline SocketReactor& SocketNotification::source() {$/;"	f	class:SocketNotification	signature:()
 span_	Timespan.h	/^  TimeDiff span_;$/;"	m	class:Timespan	access:private
+stop	SocketReactor.cc	/^void SocketReactor::stop() {$/;"	f	class:SocketReactor	signature:()
+stop	SocketReactor.h	/^  void stop();$/;"	p	class:SocketReactor	access:public	signature:()
+stop_	SocketReactor.h	/^  bool stop_;$/;"	m	class:SocketReactor	access:private
 supportsIPv4	Socket.h	/^  static bool supportsIPv4();$/;"	p	class:Socket	access:public	signature:()
 supportsIPv4	Socket.h	/^inline bool Socket::supportsIPv4() {$/;"	f	class:Socket	signature:()
 supportsIPv6	Socket.h	/^  static bool supportsIPv6();$/;"	p	class:Socket	access:public	signature:()
@@ -1638,6 +1834,7 @@ swap	Timespan.h	/^inline void swap(Timespan& s1, Timespan& s2) {$/;"	f	signature
 swap	Timestamp.cc	/^void Timestamp::swap(Timestamp& timestamp) {$/;"	f	class:Timestamp	signature:(Timestamp& timestamp)
 swap	Timestamp.h	/^  void swap(Timestamp& timestamp);$/;"	p	class:Timestamp	access:public	signature:(Timestamp& timestamp)
 swap	Timestamp.h	/^inline void swap(Timestamp& s1, Timestamp& s2) {$/;"	f	signature:(Timestamp& s1, Timestamp& s2)
+timeout_	SocketReactor.h	/^  Timespan timeout_;$/;"	m	class:SocketReactor	access:private
 toString	IPAddress.cc	/^  std::string toString() const {$/;"	f	class:IPv4AddressImpl	access:public	signature:() const
 toString	IPAddress.cc	/^  virtual std::string toString() const = 0;$/;"	p	class:IPAddressImpl	file:	access:public	signature:() const
 toString	IPAddress.cc	/^std::string IPAddress::toString() const {$/;"	f	class:IPAddress	signature:() const
@@ -1672,6 +1869,8 @@ wildcard	IPAddress.h	/^  static IPAddress wildcard(Family family = IPv4);$/;"	p	
 ~AbstractObserver	AbstractObserver.cc	/^AbstractObserver::~AbstractObserver() {$/;"	f	class:AbstractObserver	signature:()
 ~AbstractObserver	AbstractObserver.h	/^  virtual ~AbstractObserver();$/;"	p	class:AbstractObserver	access:public	signature:()
 ~AutoPtr	AutoPtr.h	/^  ~AutoPtr() {$/;"	f	class:AutoPtr	access:public	signature:()
+~ErrorHandler	ErrorHandler.cc	/^ErrorHandler::~ErrorHandler() {$/;"	f	class:ErrorHandler	signature:()
+~ErrorHandler	ErrorHandler.h	/^  virtual ~ErrorHandler();$/;"	p	class:ErrorHandler	access:public	signature:()
 ~ErrorNotification	SocketNotification.cc	/^ErrorNotification::~ErrorNotification() {$/;"	f	class:ErrorNotification	signature:()
 ~ErrorNotification	SocketNotification.h	/^  ~ErrorNotification();$/;"	p	class:ErrorNotification	access:public	signature:()
 ~Exception	Exception.cc	/^Exception::~Exception() throw (){$/;"	f	class:Exception	signature:()
@@ -1695,6 +1894,7 @@ wildcard	IPAddress.h	/^  static IPAddress wildcard(Family family = IPv4);$/;"	p	
 ~SharedPtr	SharedPtr.h	/^  ~SharedPtr() {$/;"	f	class:SharedPtr	access:public	signature:()
 ~ShutdownNotification	SocketNotification.cc	/^ShutdownNotification::~ShutdownNotification() {$/;"	f	class:ShutdownNotification	signature:()
 ~ShutdownNotification	SocketNotification.h	/^  ~ShutdownNotification();$/;"	p	class:ShutdownNotification	access:public	signature:()
+~SingletonHolder	SingletonHolder.h	/^  ~SingletonHolder() {$/;"	f	class:SingletonHolder	access:public	signature:()
 ~Socket	Socket.cc	/^Socket::~Socket() {$/;"	f	class:Socket	signature:()
 ~Socket	Socket.h	/^  virtual ~Socket();$/;"	p	class:Socket	access:public	signature:()
 ~SocketAddress	SocketAddress.cc	/^SocketAddress::~SocketAddress() {$/;"	f	class:SocketAddress	signature:()
@@ -1704,6 +1904,10 @@ wildcard	IPAddress.h	/^  static IPAddress wildcard(Family family = IPv4);$/;"	p	
 ~SocketImpl	SocketImpl.h	/^  virtual ~SocketImpl();$/;"	p	class:SocketImpl	access:protected	signature:()
 ~SocketNotification	SocketNotification.cc	/^SocketNotification::~SocketNotification(){$/;"	f	class:SocketNotification	signature:()
 ~SocketNotification	SocketNotification.h	/^  virtual ~SocketNotification();$/;"	p	class:SocketNotification	access:public	signature:()
+~SocketNotifier	SocketNotifier.cc	/^SocketNotifier::~SocketNotifier() {$/;"	f	class:SocketNotifier	signature:()
+~SocketNotifier	SocketNotifier.h	/^  ~SocketNotifier();$/;"	p	class:SocketNotifier	access:protected	signature:()
+~SocketReactor	SocketReactor.cc	/^SocketReactor::~SocketReactor() {$/;"	f	class:SocketReactor	signature:()
+~SocketReactor	SocketReactor.h	/^  virtual ~SocketReactor();$/;"	p	class:SocketReactor	access:public	signature:()
 ~StreamSocketImpl	StreamSocketImpl.cc	/^StreamSocketImpl::~StreamSocketImpl() {$/;"	f	class:StreamSocketImpl	signature:()
 ~StreamSocketImpl	StreamSocketImpl.h	/^  virtual ~StreamSocketImpl();$/;"	p	class:StreamSocketImpl	access:protected	signature:()
 ~TimeoutNotification	SocketNotification.cc	/^TimeoutNotification::~TimeoutNotification() {$/;"	f	class:TimeoutNotification	signature:()
