@@ -59,7 +59,7 @@ Timespan& Timespan::assign(int days, int hours, int minutes, int seconds,
   return *this;
 }
 
-Timespan& Timespan::assing(long seconds, long microseconds) {
+Timespan& Timespan::assign(long seconds, long microseconds) {
   span_ = TimeDiff(seconds) * SECONDS + TimeDiff(microseconds);
   return *this;
 }

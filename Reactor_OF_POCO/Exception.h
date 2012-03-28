@@ -111,5 +111,15 @@ DECLARE_EXCEPTION(NotImplementedException, LogicException);
 
 DECLARE_EXCEPTION(RuntimeException, Exception);
 DECLARE_EXCEPTION(SystemException, RuntimeException);
+DECLARE_EXCEPTION(TimeoutException, RuntimeException);
+DECLARE_EXCEPTION(IOException, RuntimeException);
+
+
+DECLARE_EXCEPTION(NetException, IOException);
+DECLARE_EXCEPTION(InvalidAddressException, NetException);
+DECLARE_EXCEPTION(InvalidSocketException, NetException);
+DECLARE_EXCEPTION(ConnectionAbortedException, NetException);
+DECLARE_EXCEPTION(ConnectionResetException, NetException);
+DECLARE_EXCEPTION(ConnectionRefusedException, NetException);
 
 #endif

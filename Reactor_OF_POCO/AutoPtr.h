@@ -88,7 +88,7 @@ class AutoPtr {
   }
 
   AutoPtr& operator= (const AutoPtr& ptr) {
-    return assing(ptr);
+    return assign(ptr);
   }
 
   template <class Other>

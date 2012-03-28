@@ -7,7 +7,7 @@
 class SocketImpl : public RefCountedObject {
  public:
   enum SelectMode {
-    SELEcT_READ = 1,
+    SELECT_READ = 1,
     SELECT_WRITE = 2,
     SELECT_ERROR = 4
   };
@@ -87,7 +87,7 @@ class SocketImpl : public RefCountedObject {
   void getOption(int level, int option, IPAddress& value);
 
   virtual void getRawOption(int level, int option, void* value,
-                            socklen_t length);
+                            socklen_t& length);
 
   void setLinger(bool on, int seconds);
   void getLinger(bool& on, int& seconds);
@@ -130,11 +130,11 @@ class SocketImpl : public RefCountedObject {
 
   virtual void initSocket(int af, int type, int proto = 0);
   void reset(int fd = -1);
-  static int lastError;
+  static int lastError();
   static void error();
   static void error(const std::string& arg);
   static void error(int code);
-  static void error(int code, std::string& arg);
+  static void error(int code, const std::string& arg);
  private:
   int sockfd_;
   Timespan recvTimeout_;
@@ -146,4 +146,20 @@ class SocketImpl : public RefCountedObject {
   
   friend class Socket;
 };
+
+inline int SocketImpl::sockfd() const{
+  return sockfd_;
+}
+
+inline bool SocketImpl::initialized() const{
+  return sockfd_ != -1;
+}
+
+inline int SocketImpl::lastError() {
+  return errno;
+}
+
+inline bool SocketImpl::getBlocking() const {
+  return blocking_;
+}
 #endif

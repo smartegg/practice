@@ -97,4 +97,23 @@ IMPLEMENT_EXCEPTION(NotImplementedException, LogicException,
                     "not implemented");
 
 IMPLEMENT_EXCEPTION(RuntimeException, Exception, "Runtime exception ");
-IMPLEMENT_EXCEPTION(SystemException, RuntimeException, "System exception");
+IMPLEMENT_EXCEPTION(SystemException, RuntimeException,
+                    "System exception");
+IMPLEMENT_EXCEPTION(TimeoutException, RuntimeException,
+                    "timeout");
+
+IMPLEMENT_EXCEPTION(IOException, RuntimeException, "io exception");
+
+
+
+IMPLEMENT_EXCEPTION(NetException, IOException, "net exception");
+IMPLEMENT_EXCEPTION(InvalidAddressException, NetException, 
+                    "invalid address");
+IMPLEMENT_EXCEPTION(InvalidSocketException, NetException,
+                    "invalid socket");
+IMPLEMENT_EXCEPTION(ConnectionAbortedException, NetException,
+                    "software caused connection abort");
+IMPLEMENT_EXCEPTION(ConnectionResetException, NetException,
+                    "connection reset by peer");
+IMPLEMENT_EXCEPTION(ConnectionRefusedException, NetException,
+                    "connection refused");

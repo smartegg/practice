@@ -27,7 +27,7 @@ class Timespan {
   Timespan& assign(int days, int hours, int minutes, int seconds,
                    int microseconds);
   
-  Timespan& assing(long seconds, long microseconds);
+  Timespan& assign(long seconds, long microseconds);
 
   void swap(Timespan& timespan);
 
