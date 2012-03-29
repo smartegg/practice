@@ -1,6 +1,7 @@
 #include "SocketImpl.h"
 
 #include "Exception.h"
+#include "StreamSocketImpl.h"
 #include <cstring>
 #include  <sys/ioctl.h>
 #include <sys/epoll.h>
@@ -148,10 +149,10 @@ void SocketImpl::shutdown() {
 int SocketImpl::sendBytes(const void* buffer, int length,
                           int flags) {
 
-  if (sendTimeout_.totalMicroseconds() != 0) {
+  /*if (sendTimeout_.totalMicroseconds() != 0) {
     if (!poll(sendTimeout_,SELECT_WRITE))
       throw TimeoutException();
-  }
+  }*/
 
   int rc;
   do {
@@ -188,6 +189,7 @@ int SocketImpl::receiveBytes(void* buffer, int length, int flags) {
       error(err);
     }
   }
+  return rc;
 }
 int SocketImpl::sendTo(const void* buffer, int length,
                      const SocketAddress& address, int flags) {
