@@ -12,7 +12,7 @@ fdout = open('./Makefile', 'w+')#trunc this file
 
 all_objs = ''
 fdout.write('app : $(OBJ)\n')
-fdout.write('\t g++ -o $@ *.o\n')
+fdout.write('\t g++ -o $@ *.o -g\n')
 
 for filename in listing:
     if (filename.endswith('.cc')):
@@ -28,7 +28,7 @@ for filename in listing:
 	fdin.close()
 	fdout.write(filename)
 	fdout.write('\n\t')
-	fdout.write('g++ -o ' + obj + ' -c ' + filename + '\n')
+	fdout.write('g++ -o ' + obj + ' -c ' + filename + ' -g \n')
 #a ungly impl here
 fdout.close()
 fdout = open('./Makefile', 'r+')#trunc this file

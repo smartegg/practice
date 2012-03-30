@@ -44,7 +44,7 @@ class IPv4SocketAddressImpl : public SocketAddressImpl {
   IPv4SocketAddressImpl(const void* addr, uint16_t port) {
     std::memset(&addr_, 0, sizeof(addr_));
     addr_.sin_family = AF_INET;
-    std::memcpy(&addr_.sin_family, addr, sizeof(addr_.sin_family));
+    std::memcpy(&addr_.sin_addr, addr, sizeof(addr_.sin_addr));
     addr_.sin_port = port;
   }
 
