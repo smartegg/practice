@@ -15,7 +15,7 @@ ErrorHandler::~ErrorHandler() {
 }
 
 void ErrorHandler::exception(const Exception& exc) {
-  std::cerr << exc.what() << std::endl;
+  std::cerr << exc.displayText() << std::endl;
 }
 
 void ErrorHandler::exception(const std::exception& exc) {

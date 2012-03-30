@@ -1,7 +1,7 @@
 #ifndef TIMESTAMP_H
 #define TIMESTAMP_H
 #include <ctime>
-#include <cstdint>
+#include <stdint.h>
 
 //@brief store a time value with microseconds resolution.
 //can be compared and support simple arithmetics

@@ -3,6 +3,7 @@
 
 #include "AbstractObserver.h"
 #include "SharedPtr.h"
+#include <vector>
 
 //@brief
 //dispatch all notifications posted by othe objects to all observers.

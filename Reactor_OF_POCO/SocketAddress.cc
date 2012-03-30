@@ -3,6 +3,7 @@
 #include "RefCountedObject.h"
 #include "Exception.h"
 #include <cstring>
+#include <cstdio>
 
 struct AFLT {
   bool operator() (const IPAddress& a1, const IPAddress& a2) {
@@ -187,4 +188,8 @@ uint16_t SocketAddress::resolveService(const std::string& service) {
     throw NotImplementedException("not implement port service lookup");
   }
 
+}
+
+const struct sockaddr* SocketAddress::addr() const {
+  return pImpl_->addr();
 }

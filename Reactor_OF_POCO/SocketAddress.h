@@ -2,7 +2,7 @@
 #define SOCKETADDRESS_H
 
 #include "IPAddress.h"
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 
 class SocketAddressImpl;

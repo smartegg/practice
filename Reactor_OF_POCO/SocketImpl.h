@@ -3,6 +3,7 @@
 #include "RefCountedObject.h"
 #include "SocketAddress.h"
 #include "Timespan.h"
+#include <cerrno>
 
 class SocketImpl : public RefCountedObject {
  public:

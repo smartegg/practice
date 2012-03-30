@@ -13,7 +13,7 @@ class Observer : public AbstractObserver{
  public:
   typedef void (C::*Callback)(N*);
   
-  Observer(C& object, Callback method) : pObject_(object), method_(method) {
+  Observer(C& object, Callback method) : pObject_(&object), method_(method) {
 
   }
 

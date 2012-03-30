@@ -32,15 +32,15 @@ class SocketNotifier : public RefCountedObject {
   Socket socket_;
 };
 
-bool SocketNotifier::accepts(SocketNotification* pNotification) {
+inline bool SocketNotifier::accepts(SocketNotification* pNotification) {
   return events_.find(pNotification) != events_.end();
 }
 
-bool SocketNotifier::hasObservers() const {
+inline bool SocketNotifier::hasObservers() const {
   return nc_.hasObservers();
 }
 
-std::size_t SocketNotifier::countObservers() const {
+inline std::size_t SocketNotifier::countObservers() const {
   return nc_.countObservers();
 }
 

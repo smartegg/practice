@@ -3,7 +3,8 @@
 #include "Exception.h"
 #include "StreamSocketImpl.h"
 #include <cstring>
-#include  <sys/ioctl.h>
+#include <cstdio>
+#include <sys/ioctl.h>
 #include <sys/epoll.h>
 
 SocketImpl::SocketImpl() : sockfd_(-1), blocking_(true){
@@ -652,7 +653,7 @@ void SocketImpl::error(int code, const std::string& arg) {
       throw NetException("No route to host", arg);
     default: {
       char buf[64];
-      sprintf(buf, "%d", code);
+      std::sprintf(buf, "%d", code);
       throw IOException(buf, arg);
     }
   };

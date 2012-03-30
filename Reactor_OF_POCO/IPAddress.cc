@@ -2,7 +2,7 @@
 
 #include "RefCountedObject.h"
 #include "Exception.h"
-#include <cstdint>
+#include <stdint.h>
 #include <cstring>
 
 class IPAddressImpl : public RefCountedObject {
