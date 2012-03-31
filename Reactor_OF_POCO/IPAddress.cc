@@ -122,7 +122,7 @@ IPAddress::IPAddress(Family family) {
   if (family == IPv4) {
     pImpl_ = new IPv4AddressImpl();
   } else {
-    throw InvalidArgumentException("Invalid orunsupported address family"
+    throw InvalidArgumentException("Invalid or unsupported address family "
                                    "passed to IPaddress()");
   }
 }
@@ -138,8 +138,8 @@ IPAddress::IPAddress(const void* addr, socklen_t length) {
   if (length == sizeof(struct in_addr))
     pImpl_ = new IPv4AddressImpl(addr);
   else
-    throw InvalidArgumentException("Invalid address length"
-                                   "passed to IPaddress()");
+    throw InvalidArgumentException("Invalid address length "
+                                   "passed to IPAddress()");
 
 }
 

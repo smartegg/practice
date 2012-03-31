@@ -11,7 +11,7 @@ SocketImpl::SocketImpl() : sockfd_(-1), blocking_(true){
 
 }
 
-SocketImpl::SocketImpl(int sockfd) : sockfd_(-1), blocking_(true){
+SocketImpl::SocketImpl(int sockfd) : sockfd_(sockfd), blocking_(true){
 
 }
 
@@ -21,13 +21,13 @@ SocketImpl::~SocketImpl() {
 
 SocketImpl* SocketImpl::acceptConnection(SocketAddress& clientAddr) {
   if (sockfd_ == -1) 
-    throw InvalidSocketException("fd not initialized");
+    throw InvalidSocketException("fd not initialized 24");
   char buffer[SocketAddress::MAX_ADDRESS_LEN];
   struct sockaddr* pSA = reinterpret_cast<struct sockaddr*>(buffer);
   socklen_t saLen = sizeof(buffer);
   socklen_t sd;
   do {
-    ::accept(sockfd_, pSA, &saLen);
+    sd = ::accept(sockfd_, pSA, &saLen);
   }while(sd == -1 && lastError() == EINTR);
 
   if (sd != -1) {
@@ -110,7 +110,7 @@ void SocketImpl::bind(const SocketAddress& address,
 
 void SocketImpl::listen(int backlog) {
   if (sockfd_ == -1)
-    throw RuntimeException();
+    throw InvalidSocketException("113");
   int rc = ::listen(sockfd_, backlog);
   if (rc != 0)
     error();
@@ -125,7 +125,7 @@ void SocketImpl::close() {
 
 void SocketImpl::shutdownReceive() {
   if (sockfd_ == -1)
-    throw RuntimeException();
+    throw InvalidSocketException("128");
   int rc = ::shutdown(sockfd_, SHUT_RD);
   if (rc != 0)
     error();
@@ -133,7 +133,7 @@ void SocketImpl::shutdownReceive() {
 
 void SocketImpl::shutdownSend() {
   if (sockfd_ == -1)
-    throw RuntimeException();
+    throw InvalidSocketException("136");
   int rc = ::shutdown(sockfd_, SHUT_WR);
   if (rc != 0)
     error();
@@ -141,7 +141,7 @@ void SocketImpl::shutdownSend() {
 
 void SocketImpl::shutdown() {
   if (sockfd_ == -1)
-    throw RuntimeException();
+    throw InvalidSocketException("144");
   int rc = ::shutdown(sockfd_, SHUT_RDWR);
   if (rc != 0)
     error();
@@ -158,7 +158,7 @@ int SocketImpl::sendBytes(const void* buffer, int length,
   int rc;
   do {
     if (sockfd_ == -1)
-      throw RuntimeException("sockfd = -1");
+      throw InvalidSocketException("161");
     rc = ::send(sockfd_, reinterpret_cast<const char*>(buffer), length,
                 flags);
   }while (rc < 0 && lastError() == EINTR);
@@ -177,7 +177,7 @@ int SocketImpl::receiveBytes(void* buffer, int length, int flags) {
   int rc;
   do {
     if (sockfd_ == -1)
-      throw RuntimeException("sockfd = -1");
+      throw InvalidSocketException("180");
     rc = ::recv(sockfd_, reinterpret_cast<char*>(buffer), length,
                 flags);
   }while(rc < 0 && lastError() == EINTR);
@@ -197,7 +197,7 @@ int SocketImpl::sendTo(const void* buffer, int length,
   int rc;
   do {
     if (sockfd_ == -1)
-      throw RuntimeException("socket = -1");
+      throw InvalidSocketException("200");
     ::sendto(sockfd_, reinterpret_cast<const char*>(buffer),
              length, flags, address.addr(), address.length());
   }while (rc < 0 && lastError() == EINTR);
@@ -220,7 +220,7 @@ int SocketImpl::receiveFrom(void* buffer, int length, SocketAddress& address,
 
   do {
     if(sockfd_ == -1)
-      throw InvalidSocketException();
+      throw InvalidSocketException("223");
     rc = ::recvfrom(sockfd_, reinterpret_cast<char*>(buffer), length, flags,
                     pSA, &saLen);
   }while(rc < 0 && lastError() == EINTR);
@@ -244,7 +244,7 @@ int SocketImpl::receiveFrom(void* buffer, int length, SocketAddress& address,
 
 void SocketImpl::sendUrgent(unsigned char data) {
   if (sockfd_ == -1) 
-    throw InvalidSocketException();
+    throw InvalidSocketException("247");
 
   int rc = ::send(sockfd_, reinterpret_cast<const char*>(&data),
                   sizeof(data), MSG_OOB);
@@ -261,7 +261,7 @@ int SocketImpl::available() {
 bool SocketImpl::poll(const Timespan& timeout, int mode) {
   int sockfd = sockfd_;
   if (sockfd == -1)
-    throw InvalidSocketException();
+    throw InvalidSocketException("264");
   int epollfd = epoll_create1(0);
 
   if (epollfd < 0)  {
@@ -355,7 +355,7 @@ Timespan SocketImpl::getReceiveTimeout() {
 
 SocketAddress SocketImpl::address() {
   if (sockfd_ == -1)
-    throw InvalidSocketException();
+    throw InvalidSocketException("358");
   char buffer[SocketAddress::MAX_ADDRESS_LEN];
   struct sockaddr* pSA = reinterpret_cast<struct sockaddr*>(buffer);
   socklen_t saLen = sizeof(buffer);
@@ -370,7 +370,7 @@ SocketAddress SocketImpl::address() {
 
 SocketAddress SocketImpl::peerAddress() {
   if (sockfd_ == -1)
-    throw InvalidSocketException();
+    throw InvalidSocketException("373");
   char buffer[SocketAddress::MAX_ADDRESS_LEN];
   struct sockaddr* pSA = reinterpret_cast<struct sockaddr*>(buffer);
   socklen_t saLen = sizeof(buffer);
@@ -408,7 +408,7 @@ void SocketImpl::setOption(int level, int option, const Timespan& value) {
 void SocketImpl::setRawOption(int level, int option, const void* value,
                               socklen_t length) {
   if (sockfd_ == -1) {
-    throw InvalidSocketException();
+    throw InvalidSocketException("411");
   }
 
   int rc = ::setsockopt(sockfd_, level, option,
@@ -450,7 +450,7 @@ void SocketImpl::getOption(int level, int option, IPAddress& value) {
 void SocketImpl::getRawOption(int level, int option, void* value,
                               socklen_t& length) {
   if (sockfd_ == -1)
-    throw InvalidSocketException();
+    throw InvalidSocketException("453");
   int rc = ::getsockopt(sockfd_, level, option,
                         reinterpret_cast<char*>(value),
                         &length);

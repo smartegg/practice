@@ -45,7 +45,7 @@ class ReleaseArrayPolicy {
 };
 
 //@biref similar with tr1::sharedPtr<>
-template <class C, class RC = ReferenceCounter, class RP = ReleaseArrayPolicy<C> >
+template <class C, class RC = ReferenceCounter, class RP = ReleasePolicy<C> >
 class SharedPtr {
  public:
   SharedPtr() : pCounter_(new RC), ptr_(0) {

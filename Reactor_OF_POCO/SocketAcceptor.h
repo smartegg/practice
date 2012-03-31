@@ -49,7 +49,7 @@ class SocketAcceptor {
   
  protected:
   virtual ServiceHandler* createServiceHandler(StreamSocket& socket) {
-    return new ServiceHandler(socket, *pReactor_);
+    return new ServiceHandler(socket, *pReactor_);//just delete in user code!!!!!!
   }
 
   SocketReactor* reactor() {

@@ -1,5 +1,6 @@
 #include "SocketAddress.h"
 
+
 #include "RefCountedObject.h"
 #include "Exception.h"
 #include <cstring>
@@ -49,7 +50,7 @@ class IPv4SocketAddressImpl : public SocketAddressImpl {
   }
 
   IPAddress host() const {
-    return IPAddress(&addr_.sin_addr, sizeof(addr_.sin_family));
+    return IPAddress(&addr_.sin_addr, sizeof(addr_.sin_addr));
   }
   
   uint16_t port() const{

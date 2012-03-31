@@ -123,7 +123,7 @@ void SocketReactor::addEventHandler(
     pNotifier = new SocketNotifier(socket);
     handlers_[socket] = pNotifier;  
   } else {
-    it->second = pNotifier;
+    pNotifier = it->second;
   }
   pNotifier->addObserver(this, observer);
 }

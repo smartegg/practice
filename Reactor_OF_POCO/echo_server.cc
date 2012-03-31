@@ -11,6 +11,30 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
+
+class TReactor : public SocketReactor {
+ protected:
+  void onTimeout()  {
+    std::cout << "on Timeout " <<std::endl;
+    SocketReactor::onTimeout();
+  }
+
+  void onIdle() {
+    std::cout << " on Idle " << std::endl;
+    SocketReactor::onIdle();
+  }
+
+  void onShutdown() {
+    std::cout << " on shutdown " << std::endl;
+    SocketReactor::onShutdown();
+  }
+
+  void onBusy() {
+    std::cout << " on busy " << std::endl;
+    SocketReactor::onBusy();
+  }
+};
 
 
 //@brief this class contian the main routine of the echo task.
@@ -56,10 +80,20 @@ int main() {
   try {
     //create  a socket , automatic bind and listen on port 9877
     ServerSocket serverSocket(9877);
-    SocketReactor reactor;
-    SocketAcceptor<AcceptorHandler> acceptor(serverSocket, reactor);
+    while (1) {
+    StreamSocket socket = serverSocket.acceptConnection();
+
+
+    char buf[1024];
+    std::memset(buf, 0, sizeof(buf));
+    int len;
+    socket.receiveBytes(buf, sizeof(buf));
+    std::cout << std::string(buf) << std::endl;
+//    TReactor reactor;
+//    SocketAcceptor<AcceptorHandler> acceptor(serverSocket, reactor);
     
-    reactor.run();
+//    reactor.run();
+    }
   }
   catch(Exception& exc) {
     ErrorHandler::handle(exc);

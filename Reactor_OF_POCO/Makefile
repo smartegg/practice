@@ -1,6 +1,7 @@
-OBJ = ErrorHandler.o StreamSocketImpl.o StreamSocket.o ServerSocket.o echo_server.o ServerSocketImpl.o NotificationCenter.o RefCountedObject.o Timespan.o SocketNotifier.o Socket.o SocketAddress.o AbstractObserver.o Timestamp.o IPAddress.o SocketImpl.o SocketReactor.o SocketNotification.o Notification.o Exception.o 
+OBJ = ErrorHandler.o StreamSocketImpl.o StreamSocket.o ServerSocket.o echo_server.o ServerSocketImpl.o NotificationCenter.o echo_client.o RefCountedObject.o Timespan.o SocketNotifier.o Socket.o SocketAddress.o AbstractObserver.o Timestamp.o IPAddress.o SocketImpl.o SocketReactor.o SocketNotification.o Notification.o Exception.o 
 
-app : $(OBJ)
+client : $(OBJ)
+	 rm echo_server.o
 	 g++ -o $@ *.o -g
 ErrorHandler.o: ErrorHandler.h SingletonHolder.h ErrorHandler.cc
 	g++ -o ErrorHandler.o -c ErrorHandler.cc -g 
@@ -16,6 +17,8 @@ ServerSocketImpl.o: ServerSocketImpl.h ServerSocketImpl.cc
 	g++ -o ServerSocketImpl.o -c ServerSocketImpl.cc -g 
 NotificationCenter.o: NotificationCenter.h SingletonHolder.h NotificationCenter.cc
 	g++ -o NotificationCenter.o -c NotificationCenter.cc -g 
+echo_client.o: Exception.h StreamSocket.h ServerSocket.h SocketReactor.h SocketAcceptor.h SocketConnector.h AutoPtr.h ErrorHandler.h echo_client.cc
+	g++ -o echo_client.o -c echo_client.cc -g 
 RefCountedObject.o: RefCountedObject.h RefCountedObject.cc
 	g++ -o RefCountedObject.o -c RefCountedObject.cc -g 
 Timespan.o: Timespan.h Timespan.cc

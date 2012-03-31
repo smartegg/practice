@@ -3,6 +3,7 @@
 #and build a Makfile  based on the .h .cc files
 #(0)./gen_makefile.py  generate a Makefile 
 #(1)make app              
+#todo  generator many makefiles depend whethe there are many main() func cpp files
 import os
 import re
 
