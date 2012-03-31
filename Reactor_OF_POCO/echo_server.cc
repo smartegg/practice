@@ -16,23 +16,27 @@
 class TReactor : public SocketReactor {
  protected:
   void onTimeout()  {
-    std::cout << "on Timeout " <<std::endl;
+    std::cout << "on Timeout \n" ;
     SocketReactor::onTimeout();
+    sleep(1);
   }
 
   void onIdle() {
-    std::cout << " on Idle " << std::endl;
+    std::cout << "\n on Idle no observers" << std::endl;
     SocketReactor::onIdle();
+    sleep(1);
   }
 
   void onShutdown() {
-    std::cout << " on shutdown " << std::endl;
+    std::cout << "\n on shutdown " << std::endl;
     SocketReactor::onShutdown();
+    sleep(1);
   }
 
   void onBusy() {
-    std::cout << " on busy " << std::endl;
+    std::cout << "\n on busy " << std::endl;
     SocketReactor::onBusy();
+    sleep(1);
   }
 };
 
@@ -80,20 +84,12 @@ int main() {
   try {
     //create  a socket , automatic bind and listen on port 9877
     ServerSocket serverSocket(9877);
-    while (1) {
     StreamSocket socket = serverSocket.acceptConnection();
 
-
-    char buf[1024];
-    std::memset(buf, 0, sizeof(buf));
-    int len;
-    socket.receiveBytes(buf, sizeof(buf));
-    std::cout << std::string(buf) << std::endl;
-//    TReactor reactor;
-//    SocketAcceptor<AcceptorHandler> acceptor(serverSocket, reactor);
+    TReactor reactor;
+    SocketAcceptor<AcceptorHandler> acceptor(serverSocket, reactor);
     
-//    reactor.run();
-    }
+    reactor.run();
   }
   catch(Exception& exc) {
     ErrorHandler::handle(exc);

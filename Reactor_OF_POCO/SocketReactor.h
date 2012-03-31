@@ -70,7 +70,7 @@ class SocketReactor {
   void dispatch(NotifierPtr& pNotifier, SocketNotification* pNotification);
 
   enum {
-    DEFAULT_TIMEOUT = 250000
+    DEFAULT_TIMEOUT = 1000000//250000
   };
 
   bool stop_;
