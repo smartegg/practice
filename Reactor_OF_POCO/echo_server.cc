@@ -16,25 +16,25 @@
 class TReactor : public SocketReactor {
  protected:
   void onTimeout()  {
-    std::cout << "on Timeout \n" ;
+    std::cout << "on Timeout : no socket readable/writable" <<std::endl;
     SocketReactor::onTimeout();
     sleep(1);
   }
 
   void onIdle() {
-    std::cout << "\n on Idle no observers" << std::endl;
+    std::cout << " on Idle : on observers registed" << std::endl;
     SocketReactor::onIdle();
     sleep(1);
   }
 
   void onShutdown() {
-    std::cout << "\n on shutdown " << std::endl;
+    std::cout << " on shutdown : server shutdown" << std::endl;
     SocketReactor::onShutdown();
     sleep(1);
   }
 
   void onBusy() {
-    std::cout << "\n on busy " << std::endl;
+    std::cout << " on busy : handle notifications" << std::endl;
     SocketReactor::onBusy();
     sleep(1);
   }
@@ -45,7 +45,7 @@ class TReactor : public SocketReactor {
 class ServiceHandler {
  public:
   void onReadable(ReadableNotification* pNotification) {
-    AutoPtr<WritableNotification> ptr;
+    AutoPtr<ReadableNotification> ptr(pNotification);
     StreamSocket& socket = static_cast<StreamSocket&>(ptr->socket());
 
     char buf[1024];
@@ -56,10 +56,11 @@ class ServiceHandler {
     std::cout << "received " << str.size()  << "bytes" << std::endl;
     std::cout << std::string(buf) << std::endl;
 
-    socket.close();
 
     pNotification->source().removeEventHandler(socket,
                             Observer<ServiceHandler, ReadableNotification>(*this, &ServiceHandler::onReadable));
+    socket.close();
+    delete this;
   }
 };
 
@@ -74,7 +75,6 @@ class AcceptorHandler {
   //@param reactor  you can use this reactor to register other event handler.
   AcceptorHandler(StreamSocket& socket, SocketReactor& reactor) {
     ServiceHandler* handler = new ServiceHandler();
-
     reactor.addEventHandler(socket,
                             Observer<ServiceHandler, ReadableNotification>(*handler, &ServiceHandler::onReadable));
   }
@@ -84,8 +84,6 @@ int main() {
   try {
     //create  a socket , automatic bind and listen on port 9877
     ServerSocket serverSocket(9877);
-    StreamSocket socket = serverSocket.acceptConnection();
-
     TReactor reactor;
     SocketAcceptor<AcceptorHandler> acceptor(serverSocket, reactor);
     
